@@ -1,0 +1,42 @@
+version: 1.0.{build}
+image: Visual Studio 2019
+skip_tags: true
+skip_branch_with_pr: true
+skip_commits:
+  files:
+    - .github/*
+    - .paket/*
+    - '**/*.md'
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '$(appveyor_build_version)'
+  package_version: '$(appveyor_build_version)'
+  assembly_version: '$(appveyor_build_version)'
+  file_version: '$(appveyor_build_version)'
+  informational_version: '$(appveyor_build_version)'
+build_script:
+- cmd: >-
+    dotnet pack src\google-dif-match-patch.sln --configuration Release --include-source
+test: off
+artifacts:
+- path: src\google-dif-match-patch\nupkg\google-dif-match-patch.$(appveyor_build_version).nupkg
+  name: google-dif-match-patch.$(appveyor_build_version).nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: en+66W6nW/JqtNDDIEeRUwdWFjw2YsKBj614gISiX+UXcgUfTvUV+ct9ZPpez1qY
+  artifact: google-dif-match-patch.$(appveyor_build_version).nupkg
+  on:
+    branch: master
+- provider: GitHub
+  tag: v$(appveyor_build_version)
+  release: v$(appveyor_build_version)
+  description: Release v$(appveyor_build_version)
+  auth_token:
+    secure: g+iWKsE2NIl0nbHRppdKG9viG1Drk5x6U++4dXtMfM9FLyOFqaRafq6qKpkyO9x7
+  repository: BlythMeister/google-dif-match-patch
+  artifact: google-dif-match-patch.$(appveyor_build_version).nupkg
+  on:
+    branch: master
+

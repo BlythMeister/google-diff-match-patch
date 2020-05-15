@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>google_dif_match_patch</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>google-dif-match-patch</AssemblyName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <Product>google-dif-match-patch</Product>
+    <Copyright>Copyright © 2020</Copyright>
+    <PackageId>google-dif-match-patch</PackageId>
+    <Description>Packaged code from https://github.com/google/diff-match-patch</Description>
+    <Authors>Chris Blyth,Google</Authors>
+    <Version>0.0.0.0</Version>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <RepositoryUrl>https://github.com/BlythMeister/google-dif-match-patch</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/BlythMeister/google-dif-match-patch</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

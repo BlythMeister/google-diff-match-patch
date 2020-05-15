@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>google_dif_match_patch_tests</RootNamespace>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>google-dif-match-patch-tests</AssemblyName>
+    <Product>google-dif-match-patch-tests</Product>
+    <Copyright>Copyright © 2020</Copyright>
+    <Company />
+    <PackageId>google-dif-match-patch-tests</PackageId>
+    <Description />
+    <Authors />
+    <Version>0.0.0.0-local</Version>
+    <AssemblyVersion>0.0.0.0</AssemblyVersion>
+    <FileVersion>0.0.0.0</FileVersion>
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject>diff_match_patchTest</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\google-dif-match-patch\google-dif-match-patch.csproj" />
+  </ItemGroup>
+</Project>
