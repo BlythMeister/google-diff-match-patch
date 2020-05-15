@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <RootNamespace>google_dif_match_patch</RootNamespace>
+    <RootNamespace>DiffMatchPatch</RootNamespace>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>google-diff-match-patch</AssemblyName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
