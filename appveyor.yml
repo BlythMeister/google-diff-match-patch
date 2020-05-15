@@ -17,16 +17,16 @@ dotnet_csproj:
   informational_version: '$(appveyor_build_version)'
 build_script:
 - cmd: >-
-    dotnet build src\google-dif-match-patch\google-dif-match-patch.csproj --configuration Release
+    dotnet build src\google-diff-match-patch\google-diff-match-patch.csproj --configuration Release
 test: off
 artifacts:
-- path: src\google-dif-match-patch\nupkg\google-dif-match-patch.$(appveyor_build_version).nupkg
-  name: google-dif-match-patch.$(appveyor_build_version).nupkg
+- path: src\google-diff-match-patch\nupkg\google-diff-match-patch.$(appveyor_build_version).nupkg
+  name: google-diff-match-patch.$(appveyor_build_version).nupkg
 deploy:
 - provider: NuGet
   api_key:
     secure: en+66W6nW/JqtNDDIEeRUwdWFjw2YsKBj614gISiX+UXcgUfTvUV+ct9ZPpez1qY
-  artifact: google-dif-match-patch.$(appveyor_build_version).nupkg
+  artifact: google-diff-match-patch.$(appveyor_build_version).nupkg
   on:
     branch: master
 - provider: GitHub
@@ -35,8 +35,8 @@ deploy:
   description: Release v$(appveyor_build_version)
   auth_token:
     secure: g+iWKsE2NIl0nbHRppdKG9viG1Drk5x6U++4dXtMfM9FLyOFqaRafq6qKpkyO9x7
-  repository: BlythMeister/google-dif-match-patch
-  artifact: google-dif-match-patch.$(appveyor_build_version).nupkg
+  repository: BlythMeister/google-diff-match-patch
+  artifact: google-diff-match-patch.$(appveyor_build_version).nupkg
   on:
     branch: master
 

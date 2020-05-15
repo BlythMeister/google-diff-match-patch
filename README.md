@@ -1,7 +1,9 @@
-# google-dif-match-patch
+# google-diff-match-patch
 
-[![AppVeyor branch](https://img.shields.io/appveyor/ci/blythmeister/google-dif-match-patch)](https://ci.appveyor.com/project/BlythMeister/google-dif-match-patch)
-[![Nuget](https://img.shields.io/nuget/v/google-dif-match-patch)](https://www.nuget.org/packages/google-dif-match-patch/)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/BlythMeister/google-dif-match-patch)](https://github.com/BlythMeister/google-dif-match-patch/releases/latest)
+[![AppVeyor branch](https://img.shields.io/appveyor/ci/blythmeister/google-diff-match-patch)](https://ci.appveyor.com/project/BlythMeister/google-diff-match-patch)
+[![Nuget](https://img.shields.io/nuget/v/google-diff-match-patch)](https://www.nuget.org/packages/google-diff-match-patch/)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/BlythMeister/google-diff-match-patch)](https://github.com/BlythMeister/google-diff-match-patch/releases/latest)
 
-C# code pulled from https://github.com/google/diff-match-patch
+Original C# code pulled from https://github.com/google/diff-match-patch
+
+Additional methods have been added as extensions.
