@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DiffMatchPatch
@@ -19,9 +20,17 @@ namespace DiffMatchPatch
             var counter = 0;
             foreach (var patch in patches)
             {
-                bool shownDif = false;
+                counter++;
+                var shownDif = false;
                 var expectedMsg = new StringBuilder();
                 var actualMsg = new StringBuilder();
+
+                if (patch.diffs.First().operation != Operation.EQUAL)
+                {
+                    expectedMsg.Append("[>>>]");
+                    actualMsg.Append("[>>>]");
+                }
+
                 foreach (var patchDif in patch.diffs)
                 {
                     switch (patchDif.operation)
@@ -51,7 +60,12 @@ namespace DiffMatchPatch
                     }
                 }
 
-                counter++;
+                if (patch.diffs.Last().operation != Operation.EQUAL)
+                {
+                    expectedMsg.Append("[<<<]");
+                    actualMsg.Append("[<<<]");
+                }
+
                 stringB.AppendLine($">> {counter} ".PadRight(40, '_'));
                 stringB.AppendLine($"@@ -{patch.start1 + 1},{patch.start1} +{patch.start2 + 1},{patch.start2} @@");
                 stringB.AppendLine(">> ---");
