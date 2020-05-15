@@ -38,13 +38,13 @@ namespace DiffMatchPatch
                         case Operation.EQUAL:
                             if (shownDif)
                             {
-                                expectedMsg.Append($"{patchDif.text}[...]");
-                                actualMsg.Append($"{patchDif.text}[...]");
+                                expectedMsg.Append($"{patchDif.text.TrimEnd()}[...]");
+                                actualMsg.Append($"{patchDif.text.TrimEnd()}[...]");
                             }
                             else
                             {
-                                expectedMsg.Append($"[...]{patchDif.text}");
-                                actualMsg.Append($"[...]{patchDif.text}");
+                                expectedMsg.Append($"[...]{patchDif.text.TrimStart()}");
+                                actualMsg.Append($"[...]{patchDif.text.TrimStart()}");
                             }
                             break;
 
