@@ -6,16 +6,61 @@ namespace DiffMatchPatch
 {
     public static class DiffMatchPatchExtensions
     {
-        public static string diff_prettyHtmlNoPara(this diff_match_patch dmp, List<Diff> diffs)
+        public static void diff_cleanupForPrettyOutput(this diff_match_patch dmp, List<Diff> diffs)
         {
-            return dmp.diff_prettyHtml(diffs).Replace("&para;<br>", "<br />");
+            dmp.diff_cleanupSemantic(diffs);
+            dmp.diff_cleanupEfficiency(diffs);
         }
 
-        public static string diff_prettyText(this diff_match_patch dmp, List<Diff> diffs)
+        public static string diff_toPrettyHtml(this diff_match_patch dmp, List<Diff> diffs)
+        {
+            var html = new StringBuilder();
+            html.AppendLine("<html>");
+            html.AppendLine("<head>");
+            html.AppendLine("</head>");
+            html.AppendLine("<body style=\"font-family: 'Lucida Console', Courier, monospace;\">");
+            html.AppendLine();
+            html.AppendLine("<!-- START OF DIFFS -->");
+            html.AppendLine();
+            foreach (var aDiff in diffs)
+            {
+                var text = aDiff.text.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\n", "<br />\n");
+
+                switch (aDiff.operation)
+                {
+                    case Operation.INSERT:
+                        html.Append("<ins style=\"background:#e6ffe6;\">").Append(text).Append("</ins>");
+                        break;
+
+                    case Operation.DELETE:
+                        html.Append("<del style=\"background:#ffe6e6;\">").Append(text).Append("</del>");
+                        break;
+
+                    case Operation.EQUAL:
+                        html.Append("<span>").Append(text).Append("</span>");
+                        break;
+                }
+            }
+            html.AppendLine();
+            html.AppendLine();
+            html.AppendLine("<!-- END OF DIFFS -->");
+            html.AppendLine();
+            html.AppendLine("</body>");
+            html.AppendLine("</html>");
+            return html.ToString();
+        }
+
+        public static (int numberOfPatches, string patches) diff_toPrettyText(this diff_match_patch dmp, List<Diff> diffs)
         {
             var patches = dmp.patch_make(diffs);
-            var stringB = new StringBuilder();
-            stringB.AppendLine();
+            var prettyText = dmp.patch_toPrettyText(patches);
+            return (patches.Count, prettyText);
+        }
+
+        public static string patch_toPrettyText(this diff_match_patch dmp, List<Patch> patches)
+        {
+            var text = new StringBuilder();
+            text.AppendLine();
 
             var counter = 0;
             foreach (var patch in patches)
@@ -66,18 +111,18 @@ namespace DiffMatchPatch
                     actualMsg.Append("[<<<]");
                 }
 
-                stringB.AppendLine($">> {counter} ".PadRight(40, '_'));
-                stringB.AppendLine($"@@ -{patch.start1 + 1},{patch.start1} +{patch.start2 + 1},{patch.start2} @@");
-                stringB.AppendLine(">> ---");
-                stringB.AppendLine(expectedMsg.ToString());
-                stringB.AppendLine("".PadLeft(20, '~'));
-                stringB.AppendLine(">> +++");
-                stringB.AppendLine(actualMsg.ToString());
-                stringB.AppendLine($" {counter} <<".PadLeft(40, '_'));
-                stringB.AppendLine();
+                text.AppendLine($">> {counter} ".PadRight(40, '_'));
+                text.AppendLine($"@@ -{patch.start1 + 1},{patch.start1} +{patch.start2 + 1},{patch.start2} @@");
+                text.AppendLine(">> ---");
+                text.AppendLine(expectedMsg.ToString());
+                text.AppendLine("".PadLeft(20, '~'));
+                text.AppendLine(">> +++");
+                text.AppendLine(actualMsg.ToString());
+                text.AppendLine($" {counter} <<".PadLeft(40, '_'));
+                text.AppendLine();
             }
 
-            return stringB.ToString();
+            return text.ToString();
         }
     }
 }

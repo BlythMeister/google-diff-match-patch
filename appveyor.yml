@@ -17,7 +17,9 @@ dotnet_csproj:
   informational_version: '$(appveyor_build_version)'
 build_script:
 - cmd: >-
-    dotnet build src\google-diff-match-patch\google-diff-match-patch.csproj --configuration Release
+    dotnet build src\google-diff-match-patch.sln --configuration Release
+    dotnet test src\google-diff-match-patch.sln --configuration Release
+    dotnet publish src\google-diff-match-patch.sln --configuration Release
 test: off
 artifacts:
 - path: src\google-diff-match-patch\nupkg\google-diff-match-patch.$(appveyor_build_version).nupkg

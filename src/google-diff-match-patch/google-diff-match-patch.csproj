@@ -18,7 +18,7 @@
     <RepositoryType>GitHub</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/BlythMeister/google-diff-match-patch</PackageProjectUrl>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\..\LICENSE">
