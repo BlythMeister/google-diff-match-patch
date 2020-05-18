@@ -15,12 +15,13 @@ dotnet_csproj:
   assembly_version: '$(appveyor_build_version)'
   file_version: '$(appveyor_build_version)'
   informational_version: '$(appveyor_build_version)'
-build_script:
-- cmd: >-
-    dotnet build src\google-diff-match-patch.sln --configuration Release
-    dotnet test src\google-diff-match-patch.sln --configuration Release
-    dotnet pack src\google-diff-match-patch.sln --configuration Release
-test: off
+configuration: Release
+platform: Any CPU
+build:
+  project: src\google-diff-match-patch.sln
+  publish_nuget: true
+  include_nuget_references: true
+  verbosity: minimal
 artifacts:
 - path: src\google-diff-match-patch\nupkg\google-diff-match-patch.$(appveyor_build_version).nupkg
   name: google-diff-match-patch.$(appveyor_build_version).nupkg
