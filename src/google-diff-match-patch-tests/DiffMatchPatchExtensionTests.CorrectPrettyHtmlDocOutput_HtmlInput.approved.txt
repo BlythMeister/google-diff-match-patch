@@ -1,0 +1,18 @@
+﻿<html>
+<head>
+</head>
+<body style="font-family: 'Lucida Console', Courier, monospace;">
+
+<!-- START OF DIFFS -->
+
+<span>&lt;p&gt;start&lt;/p&gt;<br />
+</span><ins style="background:#e6ffe6;">&lt;p&gt;new line&lt;/p&gt;<br />
+</ins><span>&lt;p&gt;line with some </span><ins style="background:#e6ffe6;">modified </ins><span>content&lt;/p&gt;<br />
+&lt;p&gt;unchanged content&lt;/p&gt;<br />
+</span><del style="background:#ffe6e6;">&lt;p&gt;removed line&lt;/p&gt;<br />
+</del><span>&lt;p&gt;end&lt;/p&gt;</span>
+
+<!-- END OF DIFFS -->
+
+</body>
+</html>

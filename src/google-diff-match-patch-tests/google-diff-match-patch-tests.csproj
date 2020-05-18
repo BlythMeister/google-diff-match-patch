@@ -32,4 +32,9 @@
   <ItemGroup>
     <ProjectReference Include="..\google-diff-match-patch\google-diff-match-patch.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="DiffMatchPatchExtensionTests.CorrectPrettyHtmlOutput.approved.txt">
+      <DependentUpon>DiffMatchPatchExtensionTests.cs</DependentUpon>
+    </None>
+  </ItemGroup>
 </Project>

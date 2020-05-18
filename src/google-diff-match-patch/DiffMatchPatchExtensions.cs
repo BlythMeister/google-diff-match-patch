@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace DiffMatchPatch
 {
@@ -12,7 +13,7 @@ namespace DiffMatchPatch
             dmp.diff_cleanupEfficiency(diffs);
         }
 
-        public static string diff_toPrettyHtml(this diff_match_patch dmp, List<Diff> diffs)
+        public static string diff_toPrettyHtmlDoc(this diff_match_patch dmp, List<Diff> diffs)
         {
             var html = new StringBuilder();
             html.AppendLine("<html>");
@@ -22,9 +23,21 @@ namespace DiffMatchPatch
             html.AppendLine();
             html.AppendLine("<!-- START OF DIFFS -->");
             html.AppendLine();
+            html.AppendLine(dmp.diff_toPrettyHtml(diffs));
+            html.AppendLine();
+            html.AppendLine("<!-- END OF DIFFS -->");
+            html.AppendLine();
+            html.AppendLine("</body>");
+            html.AppendLine("</html>");
+            return html.ToString();
+        }
+
+        public static string diff_toPrettyHtml(this diff_match_patch dmp, List<Diff> diffs)
+        {
+            var html = new StringBuilder();
             foreach (var aDiff in diffs)
             {
-                var text = aDiff.text.Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;").Replace("\n", "<br />\n");
+                var text = HttpUtility.HtmlEncode(aDiff.text).Replace("\n", "<br />\n");
 
                 switch (aDiff.operation)
                 {
@@ -41,12 +54,6 @@ namespace DiffMatchPatch
                         break;
                 }
             }
-            html.AppendLine();
-            html.AppendLine();
-            html.AppendLine("<!-- END OF DIFFS -->");
-            html.AppendLine();
-            html.AppendLine("</body>");
-            html.AppendLine("</html>");
             return html.ToString();
         }
 
