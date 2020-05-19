@@ -1,0 +1,12 @@
+﻿@@ -1,14 +1,23 @@
+ start%0a
++new line%0a
+ line wit
+@@ -23,16 +23,25 @@
+ th some 
++modified 
+ content%0a
+@@ -62,20 +62,7 @@
+ ent%0a
+-removed line%0a
+ end

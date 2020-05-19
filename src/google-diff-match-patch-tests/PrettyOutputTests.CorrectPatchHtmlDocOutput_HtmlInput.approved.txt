@@ -1,0 +1,69 @@
+﻿<html>
+<head>
+</head>
+<body style="font-family: 'Lucida Console', Courier, monospace;">
+
+<!-- START OF PATCHES -->
+
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 1</div>
+<div>Delete Character Position: 6,16</div>
+<div>Insert Character Position: 6,32</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
+<span>
+art&lt;/p&gt;<br />
+
+</span>
+<ins style="background:#e6ffe6;">
+&lt;p&gt;new line&lt;/p&gt;<br />
+
+</ins>
+<span>
+&lt;p&gt;line 
+</span>
+</div>
+</div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 2</div>
+<div>Delete Character Position: 40,16</div>
+<div>Insert Character Position: 40,25</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
+<span>
+th some 
+</span>
+<ins style="background:#e6ffe6;">
+modified 
+</ins>
+<span>
+content&lt;
+</span>
+</div>
+</div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 3</div>
+<div>Delete Character Position: 90,28</div>
+<div>Insert Character Position: 90,8</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
+<span>
+/p&gt;<br />
+
+</span>
+<del style="background:#ffe6e6;">
+&lt;p&gt;removed line&lt;/p&gt;<br />
+
+</del>
+<span>
+&lt;p&gt;e
+</span>
+</div>
+</div>
+<!-- END OF PATCHES -->
+
+</body>
+</html>

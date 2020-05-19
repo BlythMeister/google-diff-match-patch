@@ -1,0 +1,7 @@
+﻿Diff(Equal,"start¶")
+Diff(Insert,"new line¶")
+Diff(Equal,"line with some ")
+Diff(Insert,"modified ")
+Diff(Equal,"content¶unchanged content¶")
+Diff(Delete,"removed line¶")
+Diff(Equal,"end")

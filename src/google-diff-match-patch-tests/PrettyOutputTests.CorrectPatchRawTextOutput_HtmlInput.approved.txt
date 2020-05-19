@@ -1,0 +1,12 @@
+﻿@@ -6,16 +6,32 @@
+ art%3c/p%3e%0a
++%3cp%3enew line%3c/p%3e%0a
+ %3cp%3eline 
+@@ -40,16 +40,25 @@
+ th some 
++modified 
+ content%3c
+@@ -90,28 +90,8 @@
+ /p%3e%0a
+-%3cp%3eremoved line%3c/p%3e%0a
+ %3cp%3ee

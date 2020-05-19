@@ -1,0 +1,7 @@
+﻿Diff(Equal,"<p>start</p>¶")
+Diff(Insert,"<p>new line</p>¶")
+Diff(Equal,"<p>line with some ")
+Diff(Insert,"modified ")
+Diff(Equal,"content</p>¶<p>unchanged content</p>¶")
+Diff(Delete,"<p>removed line</p>¶")
+Diff(Equal,"<p>end</p>")

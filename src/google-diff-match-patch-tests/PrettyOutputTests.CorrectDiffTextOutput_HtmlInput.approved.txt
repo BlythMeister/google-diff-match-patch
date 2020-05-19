@@ -1,0 +1,13 @@
+﻿>> ---
+<p>start</p>
+<p>line with some content</p>
+<p>unchanged content</p>
+<p>removed line</p>
+<p>end</p>
+~~~~~~~~~~~~~~~~~~~~
+>> +++
+<p>start</p>
+<p>new line</p>
+<p>line with some modified content</p>
+<p>unchanged content</p>
+<p>end</p>

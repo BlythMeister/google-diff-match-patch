@@ -1,35 +1,35 @@
 ﻿
 >> 1 ___________________________________
-@@ -2,24 +2,40 @@
+@@ -1,14 +1,23 @@
 >> ---
-p&gt;start&lt;/p&gt;
-&lt;p&gt;line with
+start
+line wit
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-p&gt;start&lt;/p&gt;
-&lt;p&gt;new line&lt;/p&gt;
-&lt;p&gt;line with
+start
+new line
+line wit
 ___________________________________ 1 <<
 
 >> 2 ___________________________________
-@@ -36,24 +36,33 @@
+@@ -23,16 +23,25 @@
 >> ---
-e with some content&lt;/p&gt;
+th some content
 
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-e with some modified content&lt;/p&gt;
+th some modified content
 
 ___________________________________ 2 <<
 
 >> 3 ___________________________________
-@@ -88,32 +88,12 @@
+@@ -62,20 +62,7 @@
 >> ---
-t&lt;/p&gt;
-&lt;p&gt;removed line&lt;/p&gt;
-&lt;p&gt;end
+ent
+removed line
+end
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-t&lt;/p&gt;
-&lt;p&gt;end
+ent
+end
 ___________________________________ 3 <<

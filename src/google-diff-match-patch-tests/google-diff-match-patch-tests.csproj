@@ -18,7 +18,6 @@
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
-    <StartupObject>diff_match_patchTest</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="5.2.3" />
@@ -33,6 +32,36 @@
     <ProjectReference Include="..\google-diff-match-patch\google-diff-match-patch.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="PrettyOutputTests.CorrectToTextOutput_TextInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectToTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyPatchTextOutput_TextInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyPatchTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyPatchHtmlOutput_TextInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyPatchHtmlOutput_HtmlInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyHtmlOutput_TextInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyHtmlOutput_HtmlInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyHtmlDocOutput_TextInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
+    <None Update="PrettyOutputTests.CorrectPrettyHtmlDocOutput_HtmlInput.approved.txt">
+      <DependentUpon>PrettyOutputTests.cs</DependentUpon>
+    </None>
     <None Update="DiffMatchPatchExtensionTests.CorrectPrettyHtmlOutput.approved.txt">
       <DependentUpon>DiffMatchPatchExtensionTests.cs</DependentUpon>
     </None>

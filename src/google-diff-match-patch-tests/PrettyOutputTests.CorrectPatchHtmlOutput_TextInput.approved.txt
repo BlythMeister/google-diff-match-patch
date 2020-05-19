@@ -1,15 +1,9 @@
-﻿<html>
-<head>
-</head>
-<body style="font-family: 'Lucida Console', Courier, monospace;">
-
-<!-- START OF PATCHES -->
-
+﻿
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 1</div>
-<div>Delete Character Position: 1,18</div>
-<div>Insert Character Position: 1,27</div>
+<div>Delete Character Position: 1,14</div>
+<div>Insert Character Position: 1,23</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -21,38 +15,38 @@ new line<br />
 
 </ins>
 <span>
-line with so
+line wit
 </span>
 </div>
 </div>
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 2</div>
-<div>Delete Character Position: 19,24</div>
-<div>Insert Character Position: 19,33</div>
+<div>Delete Character Position: 23,16</div>
+<div>Insert Character Position: 23,25</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-e with some 
+th some 
 </span>
 <ins style="background:#e6ffe6;">
 modified 
 </ins>
 <span>
 content<br />
-unch
+
 </span>
 </div>
 </div>
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 3</div>
-<div>Delete Character Position: 60,22</div>
-<div>Insert Character Position: 60,9</div>
+<div>Delete Character Position: 62,20</div>
+<div>Insert Character Position: 62,7</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-ntent<br />
+ent<br />
 
 </span>
 <del style="background:#ffe6e6;">
@@ -64,7 +58,3 @@ end
 </span>
 </div>
 </div>
-<!-- END OF PATCHES -->
-
-</body>
-</html>

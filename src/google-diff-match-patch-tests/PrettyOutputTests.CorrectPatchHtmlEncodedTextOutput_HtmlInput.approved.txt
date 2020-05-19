@@ -1,35 +1,33 @@
 ﻿
 >> 1 ___________________________________
-@@ -1,18 +1,27 @@
+@@ -6,16 +6,32 @@
 >> ---
-start
-line with so
+art&lt;/p&gt;
+&lt;p&gt;line 
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-start
-new line
-line with so
+art&lt;/p&gt;
+&lt;p&gt;new line&lt;/p&gt;
+&lt;p&gt;line 
 ___________________________________ 1 <<
 
 >> 2 ___________________________________
-@@ -19,24 +19,33 @@
+@@ -40,16 +40,25 @@
 >> ---
-e with some content
-unch
+th some content&lt;
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-e with some modified content
-unch
+th some modified content&lt;
 ___________________________________ 2 <<
 
 >> 3 ___________________________________
-@@ -60,22 +60,9 @@
+@@ -90,28 +90,8 @@
 >> ---
-ntent
-removed line
-end
+/p&gt;
+&lt;p&gt;removed line&lt;/p&gt;
+&lt;p&gt;e
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-ntent
-end
+/p&gt;
+&lt;p&gt;e
 ___________________________________ 3 <<
