@@ -5,11 +5,13 @@
 
 <!-- START OF PATCHES -->
 
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 1<div>
-<div>Removal Position: 1,0<div>
-<div>Addition Position: 1,0<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 1</div>
+<div>Removal Position: 1,0</div>
+<div>Addition Position: 1,0</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 start<br />
 
@@ -23,11 +25,13 @@ line with so
 </span>
 </div>
 </div>
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 2<div>
-<div>Removal Position: 19,18<div>
-<div>Addition Position: 19,18<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 2</div>
+<div>Removal Position: 19,18</div>
+<div>Addition Position: 19,18</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 e with some 
 </span>
@@ -40,11 +44,13 @@ unch
 </span>
 </div>
 </div>
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 3<div>
-<div>Removal Position: 60,59<div>
-<div>Addition Position: 60,59<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 3</div>
+<div>Removal Position: 60,59</div>
+<div>Addition Position: 60,59</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 ntent<br />
 

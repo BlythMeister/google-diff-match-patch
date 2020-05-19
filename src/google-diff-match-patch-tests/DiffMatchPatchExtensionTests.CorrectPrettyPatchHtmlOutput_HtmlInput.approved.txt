@@ -5,11 +5,13 @@
 
 <!-- START OF PATCHES -->
 
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 1<div>
-<div>Removal Position: 2,1<div>
-<div>Addition Position: 2,1<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 1</div>
+<div>Removal Position: 2,1</div>
+<div>Addition Position: 2,1</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 p&gt;start&lt;/p&gt;<br />
 
@@ -23,11 +25,13 @@ p&gt;start&lt;/p&gt;<br />
 </span>
 </div>
 </div>
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 2<div>
-<div>Removal Position: 36,35<div>
-<div>Addition Position: 36,35<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 2</div>
+<div>Removal Position: 36,35</div>
+<div>Addition Position: 36,35</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 e with some 
 </span>
@@ -40,11 +44,13 @@ content&lt;/p&gt;<br />
 </span>
 </div>
 </div>
-<div style="border: 1px solid black; padding-bottom: 2px;">
-<div>Patch Number: 3<div>
-<div>Removal Position: 88,87<div>
-<div>Addition Position: 88,87<div>
-<div>
+<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
+<div style="padding: 5px 0;">
+<div>Patch Number: 3</div>
+<div>Removal Position: 88,87</div>
+<div>Addition Position: 88,87</div>
+</div>
+<div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
 t&lt;/p&gt;<br />
 

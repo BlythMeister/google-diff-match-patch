@@ -210,11 +210,13 @@ namespace DiffMatchPatch
             foreach (var patch in patches)
             {
                 counter++;
-                textBuilder.AppendLine("<div style=\"border: 1px solid black; padding-bottom: 2px;\">");
-                textBuilder.AppendLine($"<div>Patch Number: {counter}<div>");
-                textBuilder.AppendLine($"<div>Removal Position: {patch.start1 + 1},{patch.start1}<div>");
-                textBuilder.AppendLine($"<div>Addition Position: {patch.start2 + 1},{patch.start2}<div>");
-                textBuilder.AppendLine("<div>");
+                textBuilder.AppendLine("<div style=\"border: 1px solid black; margin-bottom: 5px; padding: 5px;\">");
+                textBuilder.AppendLine("<div style=\"padding: 5px 0;\">");
+                textBuilder.AppendLine($"<div>Patch Number: {counter}</div>");
+                textBuilder.AppendLine($"<div>Removal Position: {patch.start1 + 1},{patch.start1}</div>");
+                textBuilder.AppendLine($"<div>Addition Position: {patch.start2 + 1},{patch.start2}</div>");
+                textBuilder.AppendLine("</div>");
+                textBuilder.AppendLine("<div style=\"border-top: 1px solid black; padding: 5px 0;\">");
                 textBuilder.AppendLine(dmp.diff_toPrettyHtml(patch.diffs, htmlEncodeContent));
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("</div>");
