@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+</head>
+<body style="font-family: 'Lucida Console', Courier, monospace;">
+
+<!-- START OF PATCHES -->
+
+<div style="border: 1px solid black; padding-bottom: 2px;">
+<div>Patch Number: 1<div>
+<div>Removal Position: 2,1<div>
+<div>Addition Position: 2,1<div>
+<div>
+<span>
+p&gt;start&lt;/p&gt;<br />
+
+</span>
+<ins style="background:#e6ffe6;">
+&lt;p&gt;new line&lt;/p&gt;<br />
+
+</ins>
+<span>
+&lt;p&gt;line with
+</span>
+</div>
+</div>
+<div style="border: 1px solid black; padding-bottom: 2px;">
+<div>Patch Number: 2<div>
+<div>Removal Position: 36,35<div>
+<div>Addition Position: 36,35<div>
+<div>
+<span>
+e with some 
+</span>
+<ins style="background:#e6ffe6;">
+modified 
+</ins>
+<span>
+content&lt;/p&gt;<br />
+
+</span>
+</div>
+</div>
+<div style="border: 1px solid black; padding-bottom: 2px;">
+<div>Patch Number: 3<div>
+<div>Removal Position: 88,87<div>
+<div>Addition Position: 88,87<div>
+<div>
+<span>
+t&lt;/p&gt;<br />
+
+</span>
+<del style="background:#ffe6e6;">
+&lt;p&gt;removed line&lt;/p&gt;<br />
+
+</del>
+<span>
+&lt;p&gt;end
+</span>
+</div>
+</div>
+<!-- END OF PATCHES -->
+
+</body>
+</html>

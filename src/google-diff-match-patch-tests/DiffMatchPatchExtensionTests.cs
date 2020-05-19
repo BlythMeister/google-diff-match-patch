@@ -34,30 +34,63 @@ namespace DiffMatchPatchTests
                                           "<p>end</p>";
 
         [Test]
-        public void CorrectPrettyTextOutput_TextInput()
+        public void CorrectPrettyPatchTextOutput_TextInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expected, actual);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var (patchCount, prettyOutput) = dmp.diff_toPrettyText(diffs);
+            var (patchCount, prettyOutput) = dmp.diff_toPrettyPatchText(diffs, false);
 
             Approvals.Verify(prettyOutput);
             Assert.AreEqual(3, patchCount);
         }
 
         [Test]
-        public void CorrectPrettyHtmlOutput_TextInput()
+        public void CorrectPrettyPatchHtmlOutput_TextInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expected, actual);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var prettyOutput = dmp.diff_toPrettyHtml(diffs);
+            var (patchCount, prettyOutput) = dmp.diff_toPrettyPatchHtmlDoc(diffs, false);
+
+            Approvals.Verify(prettyOutput);
+            Assert.AreEqual(3, patchCount);
+        }
+
+        [Test]
+        public void CorrectPrettyTextOutput_TextInput()
+        {
+            var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
+
+            var diffs = dmp.diff_main(expected, actual);
+
+            dmp.diff_cleanupForPrettyOutput(diffs);
+
+            var prettyOutput = dmp.diff_toPrettyText(diffs, false);
+
+            Approvals.Verify(prettyOutput);
+        }
+
+        [Test]
+        public void CorrectPrettyHtmlOutput_TextInput()
+        {
+            var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
+
+            var diffs = dmp.diff_main(expected, actual);
+
+            dmp.diff_cleanupForPrettyOutput(diffs);
+
+            var prettyOutput = dmp.diff_toPrettyHtml(diffs, false);
 
             Approvals.Verify(prettyOutput);
         }
@@ -66,41 +99,75 @@ namespace DiffMatchPatchTests
         public void CorrectPrettyHtmlDocOutput_TextInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expected, actual);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var prettyOutput = dmp.diff_toPrettyHtmlDoc(diffs);
+            var prettyOutput = dmp.diff_toPrettyHtmlDoc(diffs, false);
 
             Approvals.Verify(prettyOutput);
         }
 
         [Test]
-        public void CorrectPrettyTextOutput_HtmlInput()
+        public void CorrectPrettyPatchTextOutput_HtmlInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expectedHtml, actualHtml);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var (patchCount, prettyOutput) = dmp.diff_toPrettyText(diffs);
+            var (patchCount, prettyOutput) = dmp.diff_toPrettyPatchText(diffs, true);
 
             Approvals.Verify(prettyOutput);
             Assert.AreEqual(3, patchCount);
         }
 
         [Test]
-        public void CorrectPrettyHtmlOutput_HtmlInput()
+        public void CorrectPrettyPatchHtmlOutput_HtmlInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expectedHtml, actualHtml);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var prettyOutput = dmp.diff_toPrettyHtml(diffs);
+            var (patchCount, prettyOutput) = dmp.diff_toPrettyPatchHtmlDoc(diffs, true);
+
+            Approvals.Verify(prettyOutput);
+            Assert.AreEqual(3, patchCount);
+        }
+
+        [Test]
+        public void CorrectPrettyTextOutput_HtmlInput()
+        {
+            var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
+
+            var diffs = dmp.diff_main(expectedHtml, actualHtml);
+
+            dmp.diff_cleanupForPrettyOutput(diffs);
+
+            var prettyOutput = dmp.diff_toPrettyText(diffs, true);
+
+            Approvals.Verify(prettyOutput);
+        }
+
+        [Test]
+        public void CorrectPrettyHtmlOutput_HtmlInput()
+        {
+            var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
+
+            var diffs = dmp.diff_main(expectedHtml, actualHtml);
+
+            dmp.diff_cleanupForPrettyOutput(diffs);
+
+            var prettyOutput = dmp.diff_toPrettyHtml(diffs, true);
 
             Approvals.Verify(prettyOutput);
         }
@@ -109,12 +176,13 @@ namespace DiffMatchPatchTests
         public void CorrectPrettyHtmlDocOutput_HtmlInput()
         {
             var dmp = new diff_match_patch();
+            dmp.dmp_perfectionSettings();
 
             var diffs = dmp.diff_main(expectedHtml, actualHtml);
 
             dmp.diff_cleanupForPrettyOutput(diffs);
 
-            var prettyOutput = dmp.diff_toPrettyHtmlDoc(diffs);
+            var prettyOutput = dmp.diff_toPrettyHtmlDoc(diffs, true);
 
             Approvals.Verify(prettyOutput);
         }

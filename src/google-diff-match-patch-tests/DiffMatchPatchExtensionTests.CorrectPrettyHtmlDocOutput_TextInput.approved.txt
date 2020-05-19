@@ -4,14 +4,32 @@
 <body style="font-family: 'Lucida Console', Courier, monospace;">
 
 <!-- START OF DIFFS -->
+<span>
+start<br />
 
-<span>start<br />
-</span><ins style="background:#e6ffe6;">new line<br />
-</ins><span>line with some </span><ins style="background:#e6ffe6;">modified </ins><span>content<br />
+</span>
+<ins style="background:#e6ffe6;">
+new line<br />
+
+</ins>
+<span>
+line with some 
+</span>
+<ins style="background:#e6ffe6;">
+modified 
+</ins>
+<span>
+content<br />
 unchanged content<br />
-</span><del style="background:#ffe6e6;">removed line<br />
-</del><span>end</span>
 
+</span>
+<del style="background:#ffe6e6;">
+removed line<br />
+
+</del>
+<span>
+end
+</span>
 <!-- END OF DIFFS -->
 
 </body>

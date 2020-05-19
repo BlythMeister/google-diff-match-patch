@@ -1,34 +1,13 @@
-﻿
->> 1 ___________________________________
-@@ -6,5 +6,5 @@
->> ---
-[...]art</p>
-<p>line[...]
+﻿>> ---
+&lt;p&gt;start&lt;/p&gt;
+&lt;p&gt;line with some content&lt;/p&gt;
+&lt;p&gt;unchanged content&lt;/p&gt;
+&lt;p&gt;removed line&lt;/p&gt;
+&lt;p&gt;end&lt;/p&gt;
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-[...]art</p>
-<p>new line</p>
-<p>line[...]
-___________________________________ 1 <<
-
->> 2 ___________________________________
-@@ -40,39 +40,39 @@
->> ---
-[...]th some content<[...]
-~~~~~~~~~~~~~~~~~~~~
->> +++
-[...]th some modified content<[...]
-___________________________________ 2 <<
-
->> 3 ___________________________________
-@@ -90,89 +90,89 @@
->> ---
-[...]/p>
-<p>removed line</p>
-<p>e[...]
-~~~~~~~~~~~~~~~~~~~~
->> +++
-[...]/p>
-<p>e[...]
-___________________________________ 3 <<
-
+&lt;p&gt;start&lt;/p&gt;
+&lt;p&gt;new line&lt;/p&gt;
+&lt;p&gt;line with some modified content&lt;/p&gt;
+&lt;p&gt;unchanged content&lt;/p&gt;
+&lt;p&gt;end&lt;/p&gt;
