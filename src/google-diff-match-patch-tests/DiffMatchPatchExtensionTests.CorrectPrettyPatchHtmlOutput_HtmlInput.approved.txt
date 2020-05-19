@@ -8,8 +8,8 @@
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 1</div>
-<div>Delete Character Coordinates: N/A</div>
-<div>Insert Character Coordinates: 2 - 42</div>
+<div>Delete Character Position: 2,24</div>
+<div>Insert Character Position: 2,40</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -28,8 +28,8 @@ p&gt;start&lt;/p&gt;<br />
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 2</div>
-<div>Delete Character Coordinates: N/A</div>
-<div>Insert Character Coordinates: 36 - 69</div>
+<div>Delete Character Position: 36,24</div>
+<div>Insert Character Position: 36,33</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -47,8 +47,8 @@ content&lt;/p&gt;<br />
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 3</div>
-<div>Delete Character Coordinates: 88 - 120</div>
-<div>Insert Character Coordinates: N/A</div>
+<div>Delete Character Position: 88,32</div>
+<div>Insert Character Position: 88,12</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>

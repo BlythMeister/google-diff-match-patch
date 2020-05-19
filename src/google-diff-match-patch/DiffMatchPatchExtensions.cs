@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Web;
 
@@ -118,9 +117,8 @@ namespace DiffMatchPatch
 
         public static string diff_toPrettyText(this diff_match_patch dmp, List<Diff> diffs, bool htmlEncodeContent)
         {
-            var shownDif = false;
-            var expectedMsg = new StringBuilder();
-            var actualMsg = new StringBuilder();
+            var deleteMessage = new StringBuilder();
+            var insertMessage = new StringBuilder();
 
             foreach (var aDiff in diffs)
             {
@@ -129,29 +127,26 @@ namespace DiffMatchPatch
                 switch (aDiff.operation)
                 {
                     case Operation.EQUAL:
-                        expectedMsg.Append(text);
-                        actualMsg.Append(text);
-
+                        deleteMessage.Append(text);
+                        insertMessage.Append(text);
                         break;
 
                     case Operation.DELETE:
-                        expectedMsg.Append($"{text}");
-                        shownDif = true;
+                        deleteMessage.Append($"{text}");
                         break;
 
                     case Operation.INSERT:
-                        actualMsg.Append($"{text}");
-                        shownDif = true;
+                        insertMessage.Append($"{text}");
                         break;
                 }
             }
 
             var textBuilder = new StringBuilder();
             textBuilder.AppendLine(">> ---");
-            textBuilder.AppendLine(expectedMsg.ToString());
+            textBuilder.AppendLine(deleteMessage.ToString());
             textBuilder.AppendLine("".PadLeft(20, '~'));
             textBuilder.AppendLine(">> +++");
-            textBuilder.AppendLine(actualMsg.ToString());
+            textBuilder.AppendLine(insertMessage.ToString());
             return textBuilder.ToStringWithoutTrailingLine();
         }
 
@@ -214,8 +209,8 @@ namespace DiffMatchPatch
                 textBuilder.AppendLine("<div style=\"border: 1px solid black; margin-bottom: 5px; padding: 5px;\">");
                 textBuilder.AppendLine("<div style=\"padding: 5px 0;\">");
                 textBuilder.AppendLine($"<div>Patch Number: {counter}</div>");
-                textBuilder.AppendLine(patch.diffs.Any(x => x.operation == Operation.DELETE) ? $"<div>Delete Character Coordinates: {patch.start1 + 1} - {patch.start1 + 1 + patch.length1}</div>" : "<div>Delete Character Coordinates: N/A</div>");
-                textBuilder.AppendLine(patch.diffs.Any(x => x.operation == Operation.INSERT) ? $"<div>Insert Character Coordinates: {patch.start2 + 1} - {patch.start2 + 1 + patch.length2}</div>" : "<div>Insert Character Coordinates: N/A</div>");
+                textBuilder.AppendLine($"<div>Delete Character Position: {patch.start1 + 1},{patch.length1}</div>");
+                textBuilder.AppendLine($"<div>Insert Character Position: {patch.start2 + 1},{patch.length2}</div>");
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("<div style=\"border-top: 1px solid black; padding: 5px 0;\">");
                 textBuilder.AppendLine(dmp.diff_toPrettyHtml(patch.diffs, htmlEncodeContent));
@@ -236,20 +231,7 @@ namespace DiffMatchPatch
             {
                 counter++;
                 textBuilder.AppendLine($">> {counter} ".PadRight(40, '_'));
-
-                if (patch.diffs.Any(x => x.operation == Operation.DELETE) && patch.diffs.Any(x => x.operation == Operation.INSERT))
-                {
-                    textBuilder.AppendLine($"@@ -- {patch.start1 + 1}-{patch.start1 + 1 + patch.length1} ++ {patch.start2 + 1}-{patch.start2 + 1 + patch.length2} @@");
-                }
-                else if (patch.diffs.Any(x => x.operation == Operation.DELETE))
-                {
-                    textBuilder.AppendLine($"@@ -- {patch.start1 + 1}-{patch.start1 + 1 + patch.length1} @@");
-                }
-                else if (patch.diffs.Any(x => x.operation == Operation.INSERT))
-                {
-                    textBuilder.AppendLine($"@@ ++ {patch.start2 + 1}-{patch.start2 + 1 + patch.length2} @@");
-                }
-
+                textBuilder.AppendLine($"@@ -{patch.start1 + 1},{patch.length1} +{patch.start2 + 1},{patch.length2} @@");
                 textBuilder.AppendLine(dmp.diff_toPrettyText(patch.diffs, htmlEncodeContent));
                 textBuilder.AppendLine($" {counter} <<".PadLeft(40, '_'));
                 textBuilder.AppendLine();
