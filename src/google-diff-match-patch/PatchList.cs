@@ -62,6 +62,8 @@ namespace DiffMatchPatch
         {
             var textBuilder = new StringBuilder();
             textBuilder.AppendLine();
+            textBuilder.AppendLine("NOTE: Patches coordinates are reliant on a previous patch being applied");
+            textBuilder.AppendLine();
 
             var counter = 0;
             foreach (var patch in patches)
@@ -94,8 +96,8 @@ namespace DiffMatchPatch
                 textBuilder.AppendLine("<div style=\"border: 1px solid black; margin-bottom: 5px; padding: 5px;\">");
                 textBuilder.AppendLine("<div style=\"padding: 5px 0;\">");
                 textBuilder.AppendLine($"<div>Patch Number: {counter}</div>");
-                textBuilder.AppendLine($"<div>Delete Character Position: {patch.Start1 + 1},{patch.Length1}</div>");
-                textBuilder.AppendLine($"<div>Insert Character Position: {patch.Start2 + 1},{patch.Length2}</div>");
+                textBuilder.AppendLine($"<div>Delete Character Coordinates: {patch.Start1 + 1},{patch.Length1}</div>");
+                textBuilder.AppendLine($"<div>Insert Character Coordinates: {patch.Start2 + 1},{patch.Length2}</div>");
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("<div style=\"border-top: 1px solid black; padding: 5px 0;\">");
                 textBuilder.AppendLine(patch.Diffs.ToHtml());
@@ -118,6 +120,8 @@ namespace DiffMatchPatch
             textBuilder.AppendLine("<head>");
             textBuilder.AppendLine("</head>");
             textBuilder.AppendLine("<body style=\"font-family: 'Lucida Console', Courier, monospace;\">");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine("<div>NOTE: Patches coordinates are reliant on a previous patch being applied</div>");
             textBuilder.AppendLine();
             textBuilder.AppendLine("<!-- START OF PATCHES -->");
             textBuilder.AppendLine(patches.ToHtml());

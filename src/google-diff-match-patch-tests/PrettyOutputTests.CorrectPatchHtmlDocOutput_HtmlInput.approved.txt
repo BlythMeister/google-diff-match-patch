@@ -3,13 +3,15 @@
 </head>
 <body style="font-family: 'Lucida Console', Courier, monospace;">
 
+<div>NOTE: Patches coordinates are reliant on a previous patch being applied</div>
+
 <!-- START OF PATCHES -->
 
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 1</div>
-<div>Delete Character Position: 6,16</div>
-<div>Insert Character Position: 6,32</div>
+<div>Delete Character Coordinates: 6,16</div>
+<div>Insert Character Coordinates: 6,32</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -28,8 +30,8 @@ art&lt;/p&gt;<br />
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 2</div>
-<div>Delete Character Position: 40,16</div>
-<div>Insert Character Position: 40,25</div>
+<div>Delete Character Coordinates: 40,16</div>
+<div>Insert Character Coordinates: 40,25</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -46,8 +48,8 @@ content&lt;
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 3</div>
-<div>Delete Character Position: 90,28</div>
-<div>Insert Character Position: 90,8</div>
+<div>Delete Character Coordinates: 90,28</div>
+<div>Insert Character Coordinates: 90,8</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>

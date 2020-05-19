@@ -2,8 +2,8 @@
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 1</div>
-<div>Delete Character Position: 1,14</div>
-<div>Insert Character Position: 1,23</div>
+<div>Delete Character Coordinates: 1,14</div>
+<div>Insert Character Coordinates: 1,23</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -22,8 +22,8 @@ line wit
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 2</div>
-<div>Delete Character Position: 23,16</div>
-<div>Insert Character Position: 23,25</div>
+<div>Delete Character Coordinates: 23,16</div>
+<div>Insert Character Coordinates: 23,25</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
@@ -41,8 +41,8 @@ content<br />
 <div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
 <div style="padding: 5px 0;">
 <div>Patch Number: 3</div>
-<div>Delete Character Position: 62,20</div>
-<div>Insert Character Position: 62,7</div>
+<div>Delete Character Coordinates: 62,20</div>
+<div>Insert Character Coordinates: 62,7</div>
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>

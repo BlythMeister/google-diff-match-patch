@@ -1,4 +1,6 @@
 ﻿
+NOTE: Patches coordinates are reliant on a previous patch being applied
+
 >> 1 ___________________________________
 @@ -1,14 +1,23 @@
 >> ---
