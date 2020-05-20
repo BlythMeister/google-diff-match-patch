@@ -151,7 +151,7 @@ namespace DiffMatchPatch
             textBuilder.AppendLine("<!-- START OF PATCH STYLE -->");
             textBuilder.AppendLine("<style type=\"text/css\">");
             textBuilder.AppendLine(".patchContainer {");
-            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
+            textBuilder.AppendLine("	font-family: 'Courier New', Courier, monospace;");
             textBuilder.AppendLine("	border: 1px solid black;");
             textBuilder.AppendLine("	margin-bottom: 5px;");
             textBuilder.AppendLine("	padding: 5px;");

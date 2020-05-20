@@ -3,7 +3,7 @@
 <!-- START OF DIFF STYLE -->
 <style type="text/css">
 .diffContainer {
-	font-family: 'Lucida Console', Courier, monospace;
+	font-family: 'Courier New', Courier, monospace;
 }
 .diffInsert {
 	background:#e6ffe6;

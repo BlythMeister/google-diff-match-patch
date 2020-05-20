@@ -189,7 +189,7 @@ namespace DiffMatchPatch
             textBuilder.AppendLine("<!-- START OF DIFF STYLE -->");
             textBuilder.AppendLine("<style type=\"text/css\">");
             textBuilder.AppendLine(".diffContainer {");
-            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
+            textBuilder.AppendLine("	font-family: 'Courier New', Courier, monospace;");
             textBuilder.AppendLine("}");
             textBuilder.AppendLine(".diffInsert {");
             textBuilder.AppendLine("	background:#e6ffe6;");
