@@ -27,41 +27,43 @@ namespace DiffMatchPatch
         public int Length1 { get; internal set; }
         public int Length2 { get; internal set; }
 
-        public string Coordinates
+        public string Coordinates1
         {
             get
             {
-                string coords1, coords2;
-                if (Length1 == 0)
+                switch (Length1)
                 {
-                    coords1 = Start1 + ",0";
+                    case 0:
+                        return Start1 + ",0";
+
+                    case 1:
+                        return Convert.ToString(Start1 + 1);
+
+                    default:
+                        return Start1 + 1 + "," + Length1;
                 }
-                else if (Length1 == 1)
-                {
-                    coords1 = Convert.ToString(Start1 + 1);
-                }
-                else
-                {
-                    coords1 = Start1 + 1 + "," + Length1;
-                }
+            }
+        }
+
+        public string Coordinates2
+        {
+            get
+            {
                 switch (Length2)
                 {
                     case 0:
-                        coords2 = Start2 + ",0";
-                        break;
+                        return Start2 + ",0";
 
                     case 1:
-                        coords2 = Convert.ToString(Start2 + 1);
-                        break;
+                        return Convert.ToString(Start2 + 1);
 
                     default:
-                        coords2 = Start2 + 1 + "," + Length2;
-                        break;
+                        return Start2 + 1 + "," + Length2;
                 }
-
-                return $"-{coords1} +{coords2}";
             }
         }
+
+        public string Coordinates => $"-{Coordinates1} +{Coordinates2}";
 
         /// <summary>
         /// Generate GNU diff's format.

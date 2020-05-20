@@ -42,9 +42,9 @@
 <div class="patchNote">NOTE: Patches coordinates are reliant on a previous patch being applied</div>
 <div class="patchContainer">
 <div class="patchTitle">
-<div>Patch Number: 1</div>
-<div>Delete Character Coordinates: 6,16</div>
-<div>Insert Character Coordinates: 6,32</div>
+<div>Patch number: 1</div>
+<div>Delete character coordinates: 6,16</div>
+<div>Insert character coordinates: 6,32</div>
 </div>
 <div class="patchDiffs">
 <!-- START OF DIFFS -->
@@ -64,9 +64,9 @@ art&lt;/p&gt;&para;<br />
 </div>
 <div class="patchContainer">
 <div class="patchTitle">
-<div>Patch Number: 2</div>
-<div>Delete Character Coordinates: 40,16</div>
-<div>Insert Character Coordinates: 40,25</div>
+<div>Patch number: 2</div>
+<div>Delete character coordinates: 40,16</div>
+<div>Insert character coordinates: 40,25</div>
 </div>
 <div class="patchDiffs">
 <!-- START OF DIFFS -->
@@ -86,9 +86,9 @@ content&lt;
 </div>
 <div class="patchContainer">
 <div class="patchTitle">
-<div>Patch Number: 3</div>
-<div>Delete Character Coordinates: 90,28</div>
-<div>Insert Character Coordinates: 90,8</div>
+<div>Patch number: 3</div>
+<div>Delete character coordinates: 90,28</div>
+<div>Insert character coordinates: 90,8</div>
 </div>
 <div class="patchDiffs">
 <!-- START OF DIFFS -->

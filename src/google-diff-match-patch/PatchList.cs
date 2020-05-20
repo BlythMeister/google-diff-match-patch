@@ -103,9 +103,9 @@ namespace DiffMatchPatch
                 counter++;
                 textBuilder.AppendLine("<div class=\"patchContainer\">");
                 textBuilder.AppendLine("<div class=\"patchTitle\">");
-                textBuilder.AppendLine($"<div>Patch Number: {counter}</div>");
-                textBuilder.AppendLine($"<div>Delete Character Coordinates: {patch.Start1 + 1},{patch.Length1}</div>");
-                textBuilder.AppendLine($"<div>Insert Character Coordinates: {patch.Start2 + 1},{patch.Length2}</div>");
+                textBuilder.AppendLine($"<div>Patch number: {counter}</div>");
+                textBuilder.AppendLine($"<div>Delete character coordinates: {patch.Coordinates1}</div>");
+                textBuilder.AppendLine($"<div>Insert character coordinates: {patch.Coordinates2}</div>");
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("<div class=\"patchDiffs\">");
                 textBuilder.AppendLine(patch.Diffs.ToHtml(false));
