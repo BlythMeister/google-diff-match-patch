@@ -15,12 +15,10 @@
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-start<br />
-
+start&para;<br />
 </span>
 <ins style="background:#e6ffe6;">
-new line<br />
-
+new line&para;<br />
 </ins>
 <span>
 line wit
@@ -41,8 +39,7 @@ th some
 modified 
 </ins>
 <span>
-content<br />
-
+content&para;<br />
 </span>
 </div>
 </div>
@@ -54,12 +51,10 @@ content<br />
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-ent<br />
-
+ent&para;<br />
 </span>
 <del style="background:#ffe6e6;">
-removed line<br />
-
+removed line&para;<br />
 </del>
 <span>
 end

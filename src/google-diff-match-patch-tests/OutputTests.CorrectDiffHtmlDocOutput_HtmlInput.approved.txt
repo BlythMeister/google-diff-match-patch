@@ -5,12 +5,10 @@
 
 <!-- START OF DIFFS -->
 <span>
-&lt;p&gt;start&lt;/p&gt;<br />
-
+&lt;p&gt;start&lt;/p&gt;&para;<br />
 </span>
 <ins style="background:#e6ffe6;">
-&lt;p&gt;new line&lt;/p&gt;<br />
-
+&lt;p&gt;new line&lt;/p&gt;&para;<br />
 </ins>
 <span>
 &lt;p&gt;line with some 
@@ -19,13 +17,11 @@
 modified 
 </ins>
 <span>
-content&lt;/p&gt;<br />
-&lt;p&gt;unchanged content&lt;/p&gt;<br />
-
+content&lt;/p&gt;&para;<br />
+&lt;p&gt;unchanged content&lt;/p&gt;&para;<br />
 </span>
 <del style="background:#ffe6e6;">
-&lt;p&gt;removed line&lt;/p&gt;<br />
-
+&lt;p&gt;removed line&lt;/p&gt;&para;<br />
 </del>
 <span>
 &lt;p&gt;end&lt;/p&gt;

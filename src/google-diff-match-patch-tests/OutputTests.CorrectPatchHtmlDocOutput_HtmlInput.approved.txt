@@ -15,12 +15,10 @@
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-art&lt;/p&gt;<br />
-
+art&lt;/p&gt;&para;<br />
 </span>
 <ins style="background:#e6ffe6;">
-&lt;p&gt;new line&lt;/p&gt;<br />
-
+&lt;p&gt;new line&lt;/p&gt;&para;<br />
 </ins>
 <span>
 &lt;p&gt;line 
@@ -53,12 +51,10 @@ content&lt;
 </div>
 <div style="border-top: 1px solid black; padding: 5px 0;">
 <span>
-/p&gt;<br />
-
+/p&gt;&para;<br />
 </span>
 <del style="background:#ffe6e6;">
-&lt;p&gt;removed line&lt;/p&gt;<br />
-
+&lt;p&gt;removed line&lt;/p&gt;&para;<br />
 </del>
 <span>
 &lt;p&gt;e

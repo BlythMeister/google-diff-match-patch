@@ -124,7 +124,11 @@ namespace DiffMatchPatch
 
             foreach (var aDiff in diffs)
             {
-                var text = HttpUtility.HtmlEncode(aDiff.Text).Replace("\n", "<br />\n");
+                var text = HttpUtility.HtmlEncode(aDiff.Text).Replace("\n", "&para;<br />\n");
+                if (text.EndsWith("\n"))
+                {
+                    text = text.Substring(0, text.Length - 1);
+                }
 
                 switch (aDiff.Operation)
                 {

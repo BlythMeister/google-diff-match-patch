@@ -1,10 +1,8 @@
 ﻿<span>
-start<br />
-
+start&para;<br />
 </span>
 <ins style="background:#e6ffe6;">
-new line<br />
-
+new line&para;<br />
 </ins>
 <span>
 line with some 
@@ -13,13 +11,11 @@ line with some
 modified 
 </ins>
 <span>
-content<br />
-unchanged content<br />
-
+content&para;<br />
+unchanged content&para;<br />
 </span>
 <del style="background:#ffe6e6;">
-removed line<br />
-
+removed line&para;<br />
 </del>
 <span>
 end
