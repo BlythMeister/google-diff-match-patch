@@ -8,7 +8,7 @@
     <Product>google-diff-match-patch</Product>
     <Copyright>Copyright © 2020</Copyright>
     <PackageId>google-diff-match-patch</PackageId>
-    <Description>Packaged Google code from https://github.com/google/diff-match-patch with some extra extensions added by Chris Blyth</Description>
+    <Description>Evolution of the C# port of the google diff-match-patch implementation. - https://github.com/google/diff-match-patch</Description>
     <Authors>Chris Blyth,Google</Authors>
     <Version>0.0.0.0</Version>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
