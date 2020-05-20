@@ -1,13 +1,13 @@
 ﻿>> ---
-start
-line with some content
-unchanged content
-removed line
+start¶
+line with some content¶
+unchanged content¶
+removed line¶
 end
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-start
-new line
-line with some modified content
-unchanged content
+start¶
+new line¶
+line with some modified content¶
+unchanged content¶
 end

@@ -14,10 +14,12 @@ namespace DiffMatchPatch
 
         internal static Diff Delete(string text) => Create(Operation.Delete, text);
 
-        public readonly Operation Operation;
+        public Operation Operation { get; }
 
         // One of: INSERT, DELETE or EQUAL.
-        public readonly string Text;
+        public string Text { get; }
+
+        public string FormattedText => Text.Replace("\n", "\u00b6\n");
 
         // The text associated with this diff operation.
 
@@ -34,8 +36,7 @@ namespace DiffMatchPatch
         /// <returns></returns>
         public override string ToString()
         {
-            var prettyText = Text.Replace('\n', '\u00b6');
-            return "Diff(" + Operation + ",\"" + prettyText + "\")\n";
+            return "Diff(" + Operation + ",\"" + FormattedText.Replace("\n", "") + "\")\n";
         }
 
         /// <summary>

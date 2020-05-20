@@ -85,7 +85,7 @@ namespace DiffMatchPatch
 
             foreach (var aDiff in diffs)
             {
-                var text = htmlEncodeContent ? HttpUtility.HtmlEncode(aDiff.Text) : aDiff.Text;
+                var text = htmlEncodeContent ? HttpUtility.HtmlEncode(aDiff.FormattedText) : aDiff.FormattedText;
 
                 switch (aDiff.Operation)
                 {
@@ -101,6 +101,8 @@ namespace DiffMatchPatch
                     case Operation.Insert:
                         insertMessage.Append($"{text}");
                         break;
+
+                    default: throw new ArgumentException($"Invalid Operation: {aDiff.Operation}");
                 }
             }
 
@@ -131,7 +133,8 @@ namespace DiffMatchPatch
 
             foreach (var aDiff in diffs)
             {
-                var text = HttpUtility.HtmlEncode(aDiff.Text).Replace("\n", "&para;<br />\n");
+                var text = HttpUtility.HtmlEncode(aDiff.FormattedText).Replace("\n", "<br />\n");
+
                 if (text.EndsWith("\n"))
                 {
                     text = text.Substring(0, text.Length - 1);
@@ -150,6 +153,8 @@ namespace DiffMatchPatch
                     case Operation.Equal:
                         textBuilder.AppendLine($"<span class=\"diffUnchanged\">\n{text}\n</span>");
                         break;
+
+                    default: throw new ArgumentException($"Invalid Operation: {aDiff.Operation}");
                 }
             }
 

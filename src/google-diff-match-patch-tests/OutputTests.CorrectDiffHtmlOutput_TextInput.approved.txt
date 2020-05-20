@@ -15,10 +15,10 @@
 <!-- START OF DIFFS -->
 <div class="diffContainer">
 <span class="diffUnchanged">
-start&para;<br />
+start&#182;<br />
 </span>
 <ins class="diffInsert">
-new line&para;<br />
+new line&#182;<br />
 </ins>
 <span class="diffUnchanged">
 line with some 
@@ -27,11 +27,11 @@ line with some
 modified 
 </ins>
 <span class="diffUnchanged">
-content&para;<br />
-unchanged content&para;<br />
+content&#182;<br />
+unchanged content&#182;<br />
 </span>
 <del class="diffDelete">
-removed line&para;<br />
+removed line&#182;<br />
 </del>
 <span class="diffUnchanged">
 end

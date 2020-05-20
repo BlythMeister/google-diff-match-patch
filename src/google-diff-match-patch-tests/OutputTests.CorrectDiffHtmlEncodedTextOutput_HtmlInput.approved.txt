@@ -1,13 +1,13 @@
 ﻿>> ---
-&lt;p&gt;start&lt;/p&gt;
-&lt;p&gt;line with some content&lt;/p&gt;
-&lt;p&gt;unchanged content&lt;/p&gt;
-&lt;p&gt;removed line&lt;/p&gt;
+&lt;p&gt;start&lt;/p&gt;&#182;
+&lt;p&gt;line with some content&lt;/p&gt;&#182;
+&lt;p&gt;unchanged content&lt;/p&gt;&#182;
+&lt;p&gt;removed line&lt;/p&gt;&#182;
 &lt;p&gt;end&lt;/p&gt;
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-&lt;p&gt;start&lt;/p&gt;
-&lt;p&gt;new line&lt;/p&gt;
-&lt;p&gt;line with some modified content&lt;/p&gt;
-&lt;p&gt;unchanged content&lt;/p&gt;
+&lt;p&gt;start&lt;/p&gt;&#182;
+&lt;p&gt;new line&lt;/p&gt;&#182;
+&lt;p&gt;line with some modified content&lt;/p&gt;&#182;
+&lt;p&gt;unchanged content&lt;/p&gt;&#182;
 &lt;p&gt;end&lt;/p&gt;

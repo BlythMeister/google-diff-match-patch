@@ -20,10 +20,10 @@
 <!-- START OF DIFFS -->
 <div class="diffContainer">
 <span class="diffUnchanged">
-&lt;p&gt;start&lt;/p&gt;&para;<br />
+&lt;p&gt;start&lt;/p&gt;&#182;<br />
 </span>
 <ins class="diffInsert">
-&lt;p&gt;new line&lt;/p&gt;&para;<br />
+&lt;p&gt;new line&lt;/p&gt;&#182;<br />
 </ins>
 <span class="diffUnchanged">
 &lt;p&gt;line with some 
@@ -32,11 +32,11 @@
 modified 
 </ins>
 <span class="diffUnchanged">
-content&lt;/p&gt;&para;<br />
-&lt;p&gt;unchanged content&lt;/p&gt;&para;<br />
+content&lt;/p&gt;&#182;<br />
+&lt;p&gt;unchanged content&lt;/p&gt;&#182;<br />
 </span>
 <del class="diffDelete">
-&lt;p&gt;removed line&lt;/p&gt;&para;<br />
+&lt;p&gt;removed line&lt;/p&gt;&#182;<br />
 </del>
 <span class="diffUnchanged">
 &lt;p&gt;end&lt;/p&gt;

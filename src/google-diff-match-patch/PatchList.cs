@@ -69,10 +69,13 @@ namespace DiffMatchPatch
             foreach (var patch in patches)
             {
                 counter++;
-                textBuilder.AppendLine($">> {counter} ".PadRight(40, '_'));
-                textBuilder.AppendLine($"@@ {patch.Coordinates} @@");
+                textBuilder.AppendLine(">> ".PadRight(40, '_'));
+                textBuilder.AppendLine($"Patch number: {counter}");
+                textBuilder.AppendLine($"Delete character coordinates: {patch.Coordinates1}");
+                textBuilder.AppendLine($"Insert character coordinates: {patch.Coordinates2}");
+                textBuilder.AppendLine("".PadLeft(20, '~'));
                 textBuilder.AppendLine(patch.Diffs.ToReadableText(htmlEncodeContent));
-                textBuilder.AppendLine($" {counter} <<".PadLeft(40, '_'));
+                textBuilder.AppendLine(" <<".PadLeft(40, '_'));
                 textBuilder.AppendLine();
             }
 

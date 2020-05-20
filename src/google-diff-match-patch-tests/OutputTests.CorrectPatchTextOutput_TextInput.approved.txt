@@ -1,37 +1,46 @@
 ﻿
 NOTE: Patches coordinates are reliant on a previous patch being applied
 
->> 1 ___________________________________
-@@ -1,14 +1,23 @@
+>> _____________________________________
+Patch number: 1
+Delete character coordinates: 1,14
+Insert character coordinates: 1,23
+~~~~~~~~~~~~~~~~~~~~
 >> ---
-start
+start¶
 line wit
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-start
-new line
+start¶
+new line¶
 line wit
-___________________________________ 1 <<
+_____________________________________ <<
 
->> 2 ___________________________________
-@@ -23,16 +23,25 @@
+>> _____________________________________
+Patch number: 2
+Delete character coordinates: 23,16
+Insert character coordinates: 23,25
+~~~~~~~~~~~~~~~~~~~~
 >> ---
-th some content
+th some content¶
 
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-th some modified content
+th some modified content¶
 
-___________________________________ 2 <<
+_____________________________________ <<
 
->> 3 ___________________________________
-@@ -62,20 +62,7 @@
+>> _____________________________________
+Patch number: 3
+Delete character coordinates: 62,20
+Insert character coordinates: 62,7
+~~~~~~~~~~~~~~~~~~~~
 >> ---
-ent
-removed line
+ent¶
+removed line¶
 end
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-ent
+ent¶
 end
-___________________________________ 3 <<
+_____________________________________ <<

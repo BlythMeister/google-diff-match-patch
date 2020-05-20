@@ -50,10 +50,10 @@
 <!-- START OF DIFFS -->
 <div class="diffContainer">
 <span class="diffUnchanged">
-start&para;<br />
+start&#182;<br />
 </span>
 <ins class="diffInsert">
-new line&para;<br />
+new line&#182;<br />
 </ins>
 <span class="diffUnchanged">
 line wit
@@ -78,7 +78,7 @@ th some
 modified 
 </ins>
 <span class="diffUnchanged">
-content&para;<br />
+content&#182;<br />
 </span>
 </div>
 <!-- END OF DIFFS -->
@@ -94,10 +94,10 @@ content&para;<br />
 <!-- START OF DIFFS -->
 <div class="diffContainer">
 <span class="diffUnchanged">
-ent&para;<br />
+ent&#182;<br />
 </span>
 <del class="diffDelete">
-removed line&para;<br />
+removed line&#182;<br />
 </del>
 <span class="diffUnchanged">
 end

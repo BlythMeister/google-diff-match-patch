@@ -1,35 +1,44 @@
 ﻿
 NOTE: Patches coordinates are reliant on a previous patch being applied
 
->> 1 ___________________________________
-@@ -6,16 +6,32 @@
+>> _____________________________________
+Patch number: 1
+Delete character coordinates: 6,16
+Insert character coordinates: 6,32
+~~~~~~~~~~~~~~~~~~~~
 >> ---
-art</p>
+art</p>¶
 <p>line 
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-art</p>
-<p>new line</p>
+art</p>¶
+<p>new line</p>¶
 <p>line 
-___________________________________ 1 <<
+_____________________________________ <<
 
->> 2 ___________________________________
-@@ -40,16 +40,25 @@
+>> _____________________________________
+Patch number: 2
+Delete character coordinates: 40,16
+Insert character coordinates: 40,25
+~~~~~~~~~~~~~~~~~~~~
 >> ---
 th some content<
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
 th some modified content<
-___________________________________ 2 <<
+_____________________________________ <<
 
->> 3 ___________________________________
-@@ -90,28 +90,8 @@
+>> _____________________________________
+Patch number: 3
+Delete character coordinates: 90,28
+Insert character coordinates: 90,8
+~~~~~~~~~~~~~~~~~~~~
 >> ---
-/p>
-<p>removed line</p>
+/p>¶
+<p>removed line</p>¶
 <p>e
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-/p>
+/p>¶
 <p>e
-___________________________________ 3 <<
+_____________________________________ <<
