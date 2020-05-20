@@ -22,8 +22,9 @@ void Main()
 	Console.WriteLine("Given 2 input strings, for example:");
 	Console.WriteLine();
 	Console.WriteLine("```csharp");
-	Console.WriteLine($"var text1 = \"{text1.Replace("\n","\\n")}\"");
-	Console.WriteLine($"var text2 = \"{text2.Replace("\n","\\n")}\"");
+	Console.WriteLine($"var text1 = \"{text1.Replace("\n","\\n\"\n            \"")}\";");
+	Console.WriteLine();
+	Console.WriteLine($"var text2 = \"{text2.Replace("\n","\\n\"\n            \"")}\";");
 	Console.WriteLine("```");
 	Console.WriteLine();
 	Console.WriteLine("We can calculate the differences by doing");

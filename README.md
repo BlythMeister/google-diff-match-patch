@@ -11,8 +11,17 @@ Evolution of the C# port of the google diff-match-patch implementation. - https:
 Given 2 input strings, for example:
 
 ```csharp
-var text1 = "start\nline with some content\nunchanged content\nremoved line\nend"
-var text2 = "start\nnew line\nline with some modified content\nunchanged content\nend"
+var text1 = "start\n"
+            "line with some content\n"
+            "unchanged content\n"
+            "removed line\n"
+            "end";
+
+var text2 = "start\n"
+            "new line\n"
+            "line with some modified content\n"
+            "unchanged content\n"
+            "end";
 ```
 
 We can calculate the differences by doing
@@ -116,3 +125,4 @@ Example output can be seen in the ApprovalTest output:
 * [patches.ToHtmlDocument()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchHtmlDocOutput_TextInput.approved.txt)
 * [patches.ToReadableText()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchTextOutput_TextInput.approved.txt)
 * [patches.ToText()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchRawTextOutput_TextInput.approved.txt)
+
