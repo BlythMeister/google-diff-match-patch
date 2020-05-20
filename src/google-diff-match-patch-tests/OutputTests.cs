@@ -7,7 +7,7 @@ namespace DiffMatchPatchTests
 {
     [TestFixture]
     [UseReporter(typeof(DiffReporter))]
-    public class PrettyOutputTests
+    public class OutputTests
     {
         private const string expected = "start\n" +
                                         "line with some content\n" +

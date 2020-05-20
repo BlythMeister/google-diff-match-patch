@@ -32,6 +32,60 @@
     <ProjectReference Include="..\google-diff-match-patch\google-diff-match-patch.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <None Update="OutputTests.CorrectDiffHtmlDocOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffHtmlDocOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffHtmlEncodedTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffHtmlOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffHtmlOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffRawTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffRawTextOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectDiffTextOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchHtmlDocOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchHtmlDocOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchHtmlEncodedTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchHtmlOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchHtmlOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchRawTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchRawTextOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchTextOutput_HtmlInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
+    <None Update="OutputTests.CorrectPatchTextOutput_TextInput.approved.txt">
+      <DependentUpon>OutputTests.cs</DependentUpon>
+    </None>
     <None Update="PrettyOutputTests.CorrectToTextOutput_TextInput.approved.txt">
       <DependentUpon>PrettyOutputTests.cs</DependentUpon>
     </None>
