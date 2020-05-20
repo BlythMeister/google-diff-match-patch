@@ -1,6 +1,4 @@
 ﻿
-NOTE: Patches coordinates are reliant on a previous patch being applied
-
 >> _____________________________________
 Patch number: 1
 Delete character coordinates: 6,16
@@ -20,6 +18,7 @@ _____________________________________ <<
 Patch number: 2
 Delete character coordinates: 40,16
 Insert character coordinates: 40,25
+NOTE: Patch coordinates are based on patch 1 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
 th some content<
@@ -32,6 +31,7 @@ _____________________________________ <<
 Patch number: 3
 Delete character coordinates: 90,28
 Insert character coordinates: 90,8
+NOTE: Patch coordinates are based on patch 2 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
 /p>¶

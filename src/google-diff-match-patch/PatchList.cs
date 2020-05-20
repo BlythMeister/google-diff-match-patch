@@ -62,8 +62,6 @@ namespace DiffMatchPatch
         {
             var textBuilder = new StringBuilder();
             textBuilder.AppendLine();
-            textBuilder.AppendLine("NOTE: Patches coordinates are reliant on a previous patch being applied");
-            textBuilder.AppendLine();
 
             var counter = 0;
             foreach (var patch in patches)
@@ -73,6 +71,10 @@ namespace DiffMatchPatch
                 textBuilder.AppendLine($"Patch number: {counter}");
                 textBuilder.AppendLine($"Delete character coordinates: {patch.Coordinates1}");
                 textBuilder.AppendLine($"Insert character coordinates: {patch.Coordinates2}");
+                if (counter > 1)
+                {
+                    textBuilder.AppendLine($"NOTE: Patch coordinates are based on patch {counter - 1} being applied");
+                }
                 textBuilder.AppendLine("".PadLeft(20, '~'));
                 textBuilder.AppendLine(patch.Diffs.ToReadableText(htmlEncodeContent));
                 textBuilder.AppendLine(" <<".PadLeft(40, '_'));
@@ -97,8 +99,6 @@ namespace DiffMatchPatch
                 textBuilder.AddPatchStyle();
             }
             textBuilder.AppendLine("<!-- START OF PATCHES -->");
-            textBuilder.AppendLine();
-            textBuilder.AppendLine("<div class=\"patchNote\">NOTE: Patches coordinates are reliant on a previous patch being applied</div>");
 
             var counter = 0;
             foreach (var patch in patches)
@@ -109,6 +109,10 @@ namespace DiffMatchPatch
                 textBuilder.AppendLine($"<div>Patch number: {counter}</div>");
                 textBuilder.AppendLine($"<div>Delete character coordinates: {patch.Coordinates1}</div>");
                 textBuilder.AppendLine($"<div>Insert character coordinates: {patch.Coordinates2}</div>");
+                if (counter > 1)
+                {
+                    textBuilder.AppendLine($"<div class=\"patchNote\">NOTE: Patch coordinates are based on patch {counter - 1} being applied</div>");
+                }
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("<div class=\"patchDiffs\">");
                 textBuilder.AppendLine(patch.Diffs.ToHtml(false));
@@ -146,17 +150,15 @@ namespace DiffMatchPatch
         {
             textBuilder.AppendLine("<!-- START OF PATCH STYLE -->");
             textBuilder.AppendLine("<style type=\"text/css\">");
-            textBuilder.AppendLine(".patchNote {");
-            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
-            textBuilder.AppendLine("	font-weight: bold;");
-            textBuilder.AppendLine("	padding: 10px 0;");
-            textBuilder.AppendLine("}");
-            textBuilder.AppendLine();
             textBuilder.AppendLine(".patchContainer {");
             textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
             textBuilder.AppendLine("	border: 1px solid black;");
             textBuilder.AppendLine("	margin-bottom: 5px;");
             textBuilder.AppendLine("	padding: 5px;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine(".patchNote {");
+            textBuilder.AppendLine("	font-weight: bold;");
             textBuilder.AppendLine("}");
             textBuilder.AppendLine();
             textBuilder.AppendLine(".patchTitle {");

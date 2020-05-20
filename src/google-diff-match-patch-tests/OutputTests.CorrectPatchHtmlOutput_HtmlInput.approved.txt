@@ -14,17 +14,15 @@
 <!-- END OF DIFF STYLE -->
 <!-- START OF PATCH STYLE -->
 <style type="text/css">
-.patchNote {
-	font-family: 'Lucida Console', Courier, monospace;
-	font-weight: bold;
-	padding: 10px 0;
-}
-
 .patchContainer {
 	font-family: 'Lucida Console', Courier, monospace;
 	border: 1px solid black;
 	margin-bottom: 5px;
 	padding: 5px;
+}
+
+.patchNote {
+	font-weight: bold;
 }
 
 .patchTitle {
@@ -38,8 +36,6 @@
 </style>
 <!-- END OF PATCH STYLE -->
 <!-- START OF PATCHES -->
-
-<div class="patchNote">NOTE: Patches coordinates are reliant on a previous patch being applied</div>
 <div class="patchContainer">
 <div class="patchTitle">
 <div>Patch number: 1</div>
@@ -67,6 +63,7 @@ art&lt;/p&gt;&#182;<br />
 <div>Patch number: 2</div>
 <div>Delete character coordinates: 40,16</div>
 <div>Insert character coordinates: 40,25</div>
+<div class="patchNote">NOTE: Patch coordinates are based on patch 1 being applied</div>
 </div>
 <div class="patchDiffs">
 <!-- START OF DIFFS -->
@@ -89,6 +86,7 @@ content&lt;
 <div>Patch number: 3</div>
 <div>Delete character coordinates: 90,28</div>
 <div>Insert character coordinates: 90,8</div>
+<div class="patchNote">NOTE: Patch coordinates are based on patch 2 being applied</div>
 </div>
 <div class="patchDiffs">
 <!-- START OF DIFFS -->
