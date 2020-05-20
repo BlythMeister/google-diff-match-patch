@@ -83,28 +83,37 @@ namespace DiffMatchPatch
         /// Convert a Patch list into a pretty HTML snippet.
         /// </summary>
         /// <param name="patches"></param>
+        /// <param name="includeStyle"></param>
         /// <returns></returns>
-        public static string ToHtml(this IEnumerable<Patch> patches)
+        public static string ToHtml(this IEnumerable<Patch> patches, bool includeStyle = true)
         {
             var textBuilder = new StringBuilder();
+            if (includeStyle)
+            {
+                textBuilder.AddDiffStyle();
+                textBuilder.AddPatchStyle();
+            }
+            textBuilder.AppendLine("<!-- START OF PATCHES -->");
             textBuilder.AppendLine();
+            textBuilder.AppendLine("<div class=\"patchNote\">NOTE: Patches coordinates are reliant on a previous patch being applied</div>");
 
             var counter = 0;
             foreach (var patch in patches)
             {
                 counter++;
-                textBuilder.AppendLine("<div style=\"border: 1px solid black; margin-bottom: 5px; padding: 5px;\">");
-                textBuilder.AppendLine("<div style=\"padding: 5px 0;\">");
+                textBuilder.AppendLine("<div class=\"patchContainer\">");
+                textBuilder.AppendLine("<div class=\"patchTitle\">");
                 textBuilder.AppendLine($"<div>Patch Number: {counter}</div>");
                 textBuilder.AppendLine($"<div>Delete Character Coordinates: {patch.Start1 + 1},{patch.Length1}</div>");
                 textBuilder.AppendLine($"<div>Insert Character Coordinates: {patch.Start2 + 1},{patch.Length2}</div>");
                 textBuilder.AppendLine("</div>");
-                textBuilder.AppendLine("<div style=\"border-top: 1px solid black; padding: 5px 0;\">");
-                textBuilder.AppendLine(patch.Diffs.ToHtml());
+                textBuilder.AppendLine("<div class=\"patchDiffs\">");
+                textBuilder.AppendLine(patch.Diffs.ToHtml(false));
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("</div>");
             }
 
+            textBuilder.AppendLine("<!-- END OF PATCHES -->");
             return textBuilder.ToStringWithoutTrailingLine();
         }
 
@@ -118,18 +127,45 @@ namespace DiffMatchPatch
             var textBuilder = new StringBuilder();
             textBuilder.AppendLine("<html>");
             textBuilder.AppendLine("<head>");
+            textBuilder.AddDiffStyle();
+            textBuilder.AddPatchStyle();
             textBuilder.AppendLine("</head>");
-            textBuilder.AppendLine("<body style=\"font-family: 'Lucida Console', Courier, monospace;\">");
+            textBuilder.AppendLine("<body>");
             textBuilder.AppendLine();
-            textBuilder.AppendLine("<div>NOTE: Patches coordinates are reliant on a previous patch being applied</div>");
-            textBuilder.AppendLine();
-            textBuilder.AppendLine("<!-- START OF PATCHES -->");
-            textBuilder.AppendLine(patches.ToHtml());
-            textBuilder.AppendLine("<!-- END OF PATCHES -->");
+            textBuilder.AppendLine(patches.ToHtml(false));
             textBuilder.AppendLine();
             textBuilder.AppendLine("</body>");
             textBuilder.AppendLine("</html>");
             return textBuilder.ToStringWithoutTrailingLine();
+        }
+
+        internal static void AddPatchStyle(this StringBuilder textBuilder)
+        {
+            textBuilder.AppendLine("<!-- START OF PATCH STYLE -->");
+            textBuilder.AppendLine("<style type=\"text/css\">");
+            textBuilder.AppendLine(".patchNote {");
+            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
+            textBuilder.AppendLine("	font-weight: bold;");
+            textBuilder.AppendLine("	padding: 10px 0;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine(".patchContainer {");
+            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
+            textBuilder.AppendLine("	border: 1px solid black;");
+            textBuilder.AppendLine("	margin-bottom: 5px;");
+            textBuilder.AppendLine("	padding: 5px;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine(".patchTitle {");
+            textBuilder.AppendLine("	padding: 5px 0;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine(".patchDiffs {");
+            textBuilder.AppendLine("	border-top: 1px solid black; ");
+            textBuilder.AppendLine("	padding: 5px 0;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine("</style>");
+            textBuilder.AppendLine("<!-- END OF PATCH STYLE -->");
         }
 
         private static readonly Regex PatchHeader = new Regex("^@@ -(\\d+),?(\\d*) \\+(\\d+),?(\\d*) @@$");

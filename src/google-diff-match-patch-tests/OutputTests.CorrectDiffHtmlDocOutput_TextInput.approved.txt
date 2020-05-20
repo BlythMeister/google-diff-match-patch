@@ -1,31 +1,47 @@
 ﻿<html>
 <head>
+<!-- START OF DIFF STYLE -->
+<style type="text/css">
+.diffContainer {
+	font-family: 'Lucida Console', Courier, monospace;
+}
+.diffInsert {
+	background:#e6ffe6;
+}
+
+.diffDelete {
+	background:#ffe6e6;
+}
+</style>
+<!-- END OF DIFF STYLE -->
 </head>
-<body style="font-family: 'Lucida Console', Courier, monospace;">
+<body>
 
 <!-- START OF DIFFS -->
-<span>
+<div class="diffContainer">
+<span class="diffUnchanged">
 start&para;<br />
 </span>
-<ins style="background:#e6ffe6;">
+<ins class="diffInsert">
 new line&para;<br />
 </ins>
-<span>
+<span class="diffUnchanged">
 line with some 
 </span>
-<ins style="background:#e6ffe6;">
+<ins class="diffInsert">
 modified 
 </ins>
-<span>
+<span class="diffUnchanged">
 content&para;<br />
 unchanged content&para;<br />
 </span>
-<del style="background:#ffe6e6;">
+<del class="diffDelete">
 removed line&para;<br />
 </del>
-<span>
+<span class="diffUnchanged">
 end
 </span>
+</div>
 <!-- END OF DIFFS -->
 
 </body>

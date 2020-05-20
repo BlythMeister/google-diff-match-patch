@@ -1,55 +1,109 @@
-﻿
-<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
-<div style="padding: 5px 0;">
+﻿<!-- START OF DIFF STYLE -->
+<style type="text/css">
+.diffContainer {
+	font-family: 'Lucida Console', Courier, monospace;
+}
+.diffInsert {
+	background:#e6ffe6;
+}
+
+.diffDelete {
+	background:#ffe6e6;
+}
+</style>
+<!-- END OF DIFF STYLE -->
+<!-- START OF PATCH STYLE -->
+<style type="text/css">
+.patchNote {
+	font-family: 'Lucida Console', Courier, monospace;
+	font-weight: bold;
+	padding: 10px 0;
+}
+
+.patchContainer {
+	font-family: 'Lucida Console', Courier, monospace;
+	border: 1px solid black;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+
+.patchTitle {
+	padding: 5px 0;
+}
+
+.patchDiffs {
+	border-top: 1px solid black; 
+	padding: 5px 0;
+}
+</style>
+<!-- END OF PATCH STYLE -->
+<!-- START OF PATCHES -->
+
+<div class="patchNote">NOTE: Patches coordinates are reliant on a previous patch being applied</div>
+<div class="patchContainer">
+<div class="patchTitle">
 <div>Patch Number: 1</div>
 <div>Delete Character Coordinates: 1,14</div>
 <div>Insert Character Coordinates: 1,23</div>
 </div>
-<div style="border-top: 1px solid black; padding: 5px 0;">
-<span>
+<div class="patchDiffs">
+<!-- START OF DIFFS -->
+<div class="diffContainer">
+<span class="diffUnchanged">
 start&para;<br />
 </span>
-<ins style="background:#e6ffe6;">
+<ins class="diffInsert">
 new line&para;<br />
 </ins>
-<span>
+<span class="diffUnchanged">
 line wit
 </span>
 </div>
+<!-- END OF DIFFS -->
 </div>
-<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
-<div style="padding: 5px 0;">
+</div>
+<div class="patchContainer">
+<div class="patchTitle">
 <div>Patch Number: 2</div>
 <div>Delete Character Coordinates: 23,16</div>
 <div>Insert Character Coordinates: 23,25</div>
 </div>
-<div style="border-top: 1px solid black; padding: 5px 0;">
-<span>
+<div class="patchDiffs">
+<!-- START OF DIFFS -->
+<div class="diffContainer">
+<span class="diffUnchanged">
 th some 
 </span>
-<ins style="background:#e6ffe6;">
+<ins class="diffInsert">
 modified 
 </ins>
-<span>
+<span class="diffUnchanged">
 content&para;<br />
 </span>
 </div>
+<!-- END OF DIFFS -->
 </div>
-<div style="border: 1px solid black; margin-bottom: 5px; padding: 5px;">
-<div style="padding: 5px 0;">
+</div>
+<div class="patchContainer">
+<div class="patchTitle">
 <div>Patch Number: 3</div>
 <div>Delete Character Coordinates: 62,20</div>
 <div>Insert Character Coordinates: 62,7</div>
 </div>
-<div style="border-top: 1px solid black; padding: 5px 0;">
-<span>
+<div class="patchDiffs">
+<!-- START OF DIFFS -->
+<div class="diffContainer">
+<span class="diffUnchanged">
 ent&para;<br />
 </span>
-<del style="background:#ffe6e6;">
+<del class="diffDelete">
 removed line&para;<br />
 </del>
-<span>
+<span class="diffUnchanged">
 end
 </span>
 </div>
+<!-- END OF DIFFS -->
 </div>
+</div>
+<!-- END OF PATCHES -->

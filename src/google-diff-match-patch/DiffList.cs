@@ -117,10 +117,17 @@ namespace DiffMatchPatch
         /// Convert a Diff list into a pretty HTML snippet.
         /// </summary>
         /// <param name="diffs"></param>
+        /// <param name="includeStyle"></param>
         /// <returns></returns>
-        public static string ToHtml(this IEnumerable<Diff> diffs)
+        public static string ToHtml(this IEnumerable<Diff> diffs, bool includeStyle = true)
         {
             var textBuilder = new StringBuilder();
+            if (includeStyle)
+            {
+                textBuilder.AddDiffStyle();
+            }
+            textBuilder.AppendLine("<!-- START OF DIFFS -->");
+            textBuilder.AppendLine("<div class=\"diffContainer\">");
 
             foreach (var aDiff in diffs)
             {
@@ -133,19 +140,21 @@ namespace DiffMatchPatch
                 switch (aDiff.Operation)
                 {
                     case Operation.Insert:
-                        textBuilder.AppendLine($"<ins style=\"background:#e6ffe6;\">\n{text}\n</ins>");
+                        textBuilder.AppendLine($"<ins class=\"diffInsert\">\n{text}\n</ins>");
                         break;
 
                     case Operation.Delete:
-                        textBuilder.AppendLine($"<del style=\"background:#ffe6e6;\">\n{text}\n</del>");
+                        textBuilder.AppendLine($"<del class=\"diffDelete\">\n{text}\n</del>");
                         break;
 
                     case Operation.Equal:
-                        textBuilder.AppendLine($"<span>\n{text}\n</span>");
+                        textBuilder.AppendLine($"<span class=\"diffUnchanged\">\n{text}\n</span>");
                         break;
                 }
             }
 
+            textBuilder.AppendLine("</div>");
+            textBuilder.AppendLine("<!-- END OF DIFFS -->");
             return textBuilder.ToStringWithoutTrailingLine();
         }
 
@@ -159,16 +168,33 @@ namespace DiffMatchPatch
             var textBuilder = new StringBuilder();
             textBuilder.AppendLine("<html>");
             textBuilder.AppendLine("<head>");
+            textBuilder.AddDiffStyle();
             textBuilder.AppendLine("</head>");
-            textBuilder.AppendLine("<body style=\"font-family: 'Lucida Console', Courier, monospace;\">");
+            textBuilder.AppendLine("<body>");
             textBuilder.AppendLine();
-            textBuilder.AppendLine("<!-- START OF DIFFS -->");
-            textBuilder.AppendLine(diffs.ToHtml());
-            textBuilder.AppendLine("<!-- END OF DIFFS -->");
+            textBuilder.AppendLine(diffs.ToHtml(false));
             textBuilder.AppendLine();
             textBuilder.AppendLine("</body>");
             textBuilder.AppendLine("</html>");
             return textBuilder.ToStringWithoutTrailingLine();
+        }
+
+        internal static void AddDiffStyle(this StringBuilder textBuilder)
+        {
+            textBuilder.AppendLine("<!-- START OF DIFF STYLE -->");
+            textBuilder.AppendLine("<style type=\"text/css\">");
+            textBuilder.AppendLine(".diffContainer {");
+            textBuilder.AppendLine("	font-family: 'Lucida Console', Courier, monospace;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine(".diffInsert {");
+            textBuilder.AppendLine("	background:#e6ffe6;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
+            textBuilder.AppendLine(".diffDelete {");
+            textBuilder.AppendLine("	background:#ffe6e6;");
+            textBuilder.AppendLine("}");
+            textBuilder.AppendLine("</style>");
+            textBuilder.AppendLine("<!-- END OF DIFF STYLE -->");
         }
 
         private static char ToDelta(this Operation o)
