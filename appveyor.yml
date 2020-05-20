@@ -5,8 +5,8 @@ skip_branch_with_pr: true
 skip_commits:
   files:
     - .github/*
-    - .paket/*
     - '**/*.md'
+    - 'src/GenerateUsages.linq'
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
