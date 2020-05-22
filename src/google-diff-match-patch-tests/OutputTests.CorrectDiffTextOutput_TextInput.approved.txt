@@ -2,6 +2,7 @@
 start¶
 line·with·some·content¶
 line·with·some·more·content¶
+line·with·some·»whitespace»·content¶
 unchanged·content¶
 removed·line¶
 end
@@ -11,5 +12,6 @@ start¶
 new·line¶
 line·with·some·modified·content¶
 line·with·some·more·content»that·has·a·tab·added¶
+line·with·some·whitespace·content¶
 unchanged·content¶
 end

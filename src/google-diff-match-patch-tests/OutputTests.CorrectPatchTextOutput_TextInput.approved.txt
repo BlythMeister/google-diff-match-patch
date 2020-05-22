@@ -31,24 +31,52 @@ _____________________________________ <<
 
 >> _____________________________________
 Patch number: 3
-Delete character coordinates: 67,16
-Insert character coordinates: 67,37
+Delete character coordinates: 59,32
+Insert character coordinates: 59,53
 NOTE: Patch coordinates are based on patch 2 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
-·content¶
-unchang
+ome·more·content¶
+line·with·some·
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-·content»that·has·a·tab·added¶
-unchang
+ome·more·content»that·has·a·tab·added¶
+line·with·some·
 _____________________________________ <<
 
 >> _____________________________________
 Patch number: 4
-Delete character coordinates: 111,20
-Insert character coordinates: 111,7
+Delete character coordinates: 104,17
+Insert character coordinates: 104,16
 NOTE: Patch coordinates are based on patch 3 being applied
+NOTE: Patch contains whitespace only differences
+~~~~~~~~~~~~~~~~~~~~
+>> ---
+th·some·»whitespa
+~~~~~~~~~~~~~~~~~~~~
+>> +++
+th·some·whitespa
+_____________________________________ <<
+
+>> _____________________________________
+Patch number: 5
+Delete character coordinates: 114,17
+Insert character coordinates: 114,16
+NOTE: Patch coordinates are based on patch 4 being applied
+NOTE: Patch contains whitespace only differences
+~~~~~~~~~~~~~~~~~~~~
+>> ---
+itespace»·content
+~~~~~~~~~~~~~~~~~~~~
+>> +++
+itespace·content
+_____________________________________ <<
+
+>> _____________________________________
+Patch number: 6
+Delete character coordinates: 145,20
+Insert character coordinates: 145,7
+NOTE: Patch coordinates are based on patch 5 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
 ent¶

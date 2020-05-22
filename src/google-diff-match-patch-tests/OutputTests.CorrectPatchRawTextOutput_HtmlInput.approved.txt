@@ -9,8 +9,16 @@
 @@ -83,32 +83,53 @@
  ome more content
 +%09that has a tab added
- %3c/p%3e%0a%3cp%3eunchange
-@@ -146,28 +146,8 @@
+ %3c/p%3e%0a%3cp%3eline wit
+@@ -135,17 +135,16 @@
+ th some 
+-%09
+ whitespa
+@@ -145,17 +145,16 @@
+ itespace
+-%09
+  content
+@@ -187,28 +187,8 @@
  /p%3e%0a
 -%3cp%3eremoved line%3c/p%3e%0a
  %3cp%3ee

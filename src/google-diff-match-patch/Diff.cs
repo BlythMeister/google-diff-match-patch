@@ -14,14 +14,15 @@ namespace DiffMatchPatch
 
         internal static Diff Delete(string text) => Create(Operation.Delete, text);
 
+        // One of: INSERT, DELETE or EQUAL.
         public Operation Operation { get; }
 
-        // One of: INSERT, DELETE or EQUAL.
+        // The text associated with this diff operation.
         public string Text { get; }
 
         public string FormattedText => Text.Replace("\r\n", "\n").Replace("\n", "\u00b6\n").Replace("\t", "\u00BB").Replace(" ", "\u00B7");
 
-        // The text associated with this diff operation.
+        public bool WhitespaceOnlyDiff => string.IsNullOrWhiteSpace(Text);
 
         private Diff(Operation operation, string text)
         {

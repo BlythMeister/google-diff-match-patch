@@ -193,6 +193,7 @@ namespace DiffMatchPatch
             textBuilder.AppendLine(".diffContainer {");
             textBuilder.AppendLine("	font-family: 'Courier New', Courier, monospace;");
             textBuilder.AppendLine("}");
+            textBuilder.AppendLine();
             textBuilder.AppendLine(".diffInsert {");
             textBuilder.AppendLine("	background:#e6ffe6;");
             textBuilder.AppendLine("}");

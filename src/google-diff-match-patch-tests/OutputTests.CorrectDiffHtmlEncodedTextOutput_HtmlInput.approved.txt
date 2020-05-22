@@ -2,6 +2,7 @@
 &lt;p&gt;start&lt;/p&gt;&#182;
 &lt;p&gt;line&#183;with&#183;some&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;line&#183;with&#183;some&#183;more&#183;content&lt;/p&gt;&#182;
+&lt;p&gt;line&#183;with&#183;some&#183;&#187;whitespace&#187;&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;unchanged&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;removed&#183;line&lt;/p&gt;&#182;
 &lt;p&gt;end&lt;/p&gt;
@@ -11,5 +12,6 @@
 &lt;p&gt;new&#183;line&lt;/p&gt;&#182;
 &lt;p&gt;line&#183;with&#183;some&#183;modified&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;line&#183;with&#183;some&#183;more&#183;content&#187;that&#183;has&#183;a&#183;tab&#183;added&lt;/p&gt;&#182;
+&lt;p&gt;line&#183;with&#183;some&#183;whitespace&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;unchanged&#183;content&lt;/p&gt;&#182;
 &lt;p&gt;end&lt;/p&gt;

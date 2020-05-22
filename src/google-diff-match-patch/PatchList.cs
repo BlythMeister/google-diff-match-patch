@@ -75,6 +75,10 @@ namespace DiffMatchPatch
                 {
                     textBuilder.AppendLine($"NOTE: Patch coordinates are based on patch {counter - 1} being applied");
                 }
+                if (patch.Diffs.All(x => x.Operation == Operation.Equal || x.WhitespaceOnlyDiff))
+                {
+                    textBuilder.AppendLine("NOTE: Patch contains whitespace only differences");
+                }
                 textBuilder.AppendLine("".PadLeft(20, '~'));
                 textBuilder.AppendLine(patch.Diffs.ToReadableText(htmlEncodeContent));
                 textBuilder.AppendLine(" <<".PadLeft(40, '_'));
@@ -112,6 +116,10 @@ namespace DiffMatchPatch
                 if (counter > 1)
                 {
                     textBuilder.AppendLine($"<div class=\"patchNote\">NOTE: Patch coordinates are based on patch {counter - 1} being applied</div>");
+                }
+                if (patch.Diffs.All(x => x.Operation == Operation.Equal || x.WhitespaceOnlyDiff))
+                {
+                    textBuilder.AppendLine("<div class=\"patchNote\">NOTE: Patch contains whitespace only differences</div>");
                 }
                 textBuilder.AppendLine("</div>");
                 textBuilder.AppendLine("<div class=\"patchDiffs\">");

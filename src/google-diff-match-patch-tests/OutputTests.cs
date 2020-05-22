@@ -12,6 +12,7 @@ namespace DiffMatchPatchTests
         private const string expected = "start\n" +
                                         "line with some content\n" +
                                         "line with some more content\n" +
+                                        "line with some \twhitespace\t content\n" +
                                         "unchanged content\n" +
                                         "removed line\n" +
                                         "end";
@@ -20,12 +21,14 @@ namespace DiffMatchPatchTests
                                       "new line\n" +
                                       "line with some modified content\n" +
                                       "line with some more content\tthat has a tab added\n" +
+                                      "line with some whitespace content\n" +
                                       "unchanged content\n" +
                                       "end";
 
         private const string expectedHtml = "<p>start</p>\n" +
                                             "<p>line with some content</p>\n" +
                                             "<p>line with some more content</p>\n" +
+                                            "<p>line with some \twhitespace\t content</p>\n" +
                                             "<p>unchanged content</p>\n" +
                                             "<p>removed line</p>\n" +
                                             "<p>end</p>";
@@ -34,6 +37,7 @@ namespace DiffMatchPatchTests
                                           "<p>new line</p>\n" +
                                           "<p>line with some modified content</p>\n" +
                                           "<p>line with some more content\tthat has a tab added</p>\n" +
+                                          "<p>line with some whitespace content</p>\n" +
                                           "<p>unchanged content</p>\n" +
                                           "<p>end</p>";
 
@@ -46,7 +50,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToText()));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -58,7 +62,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText()));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -70,7 +74,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToHtml(), "html"));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -82,7 +86,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToHtmlDocument(), "html"));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -130,7 +134,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToText()));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -142,7 +146,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText()));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -154,7 +158,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText(true)));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -166,7 +170,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToHtml(), "html"));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]
@@ -178,7 +182,7 @@ namespace DiffMatchPatchTests
             var patches = Patch.FromDiffs(diffs);
 
             Approvals.Verify(new ApprovalTextWriter(patches.ToHtmlDocument(), "html"));
-            Assert.AreEqual(4, patches.Count);
+            Assert.AreEqual(6, patches.Count);
         }
 
         [Test]

@@ -6,11 +6,19 @@
  th some 
 +modified 
  content%0a
-@@ -67,16 +67,37 @@
-  content
+@@ -59,32 +59,53 @@
+ ome more content
 +%09that has a tab added
- %0aunchang
-@@ -111,20 +111,7 @@
+ %0aline with some 
+@@ -104,17 +104,16 @@
+ th some 
+-%09
+ whitespa
+@@ -114,17 +114,16 @@
+ itespace
+-%09
+  content
+@@ -145,20 +145,7 @@
  ent%0a
 -removed line%0a
  end
