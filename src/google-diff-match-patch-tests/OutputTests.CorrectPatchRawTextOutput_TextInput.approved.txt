@@ -6,7 +6,11 @@
  th some 
 +modified 
  content%0a
-@@ -62,20 +62,7 @@
+@@ -67,16 +67,37 @@
+  content
++%09that has a tab added
+ %0aunchang
+@@ -111,20 +111,7 @@
  ent%0a
 -removed line%0a
  end

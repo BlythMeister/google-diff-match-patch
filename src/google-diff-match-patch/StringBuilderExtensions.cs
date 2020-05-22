@@ -7,7 +7,17 @@ namespace DiffMatchPatch
         public static string ToStringWithoutTrailingLine(this StringBuilder sb)
         {
             var stringOutput = sb.ToString();
-            return stringOutput.Substring(0, stringOutput.Length - 2);
+            if (stringOutput.EndsWith("\r\n"))
+            {
+                return stringOutput.Substring(0, stringOutput.Length - 2);
+            }
+
+            if (stringOutput.EndsWith("\n"))
+            {
+                return stringOutput.Substring(0, stringOutput.Length - 1);
+            }
+
+            return stringOutput;
         }
     }
 }

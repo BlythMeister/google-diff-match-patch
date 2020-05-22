@@ -11,6 +11,7 @@ namespace DiffMatchPatchTests
     {
         private const string expected = "start\n" +
                                         "line with some content\n" +
+                                        "line with some more content\n" +
                                         "unchanged content\n" +
                                         "removed line\n" +
                                         "end";
@@ -18,11 +19,13 @@ namespace DiffMatchPatchTests
         private const string actual = "start\n" +
                                       "new line\n" +
                                       "line with some modified content\n" +
+                                      "line with some more content\tthat has a tab added\n" +
                                       "unchanged content\n" +
                                       "end";
 
         private const string expectedHtml = "<p>start</p>\n" +
                                             "<p>line with some content</p>\n" +
+                                            "<p>line with some more content</p>\n" +
                                             "<p>unchanged content</p>\n" +
                                             "<p>removed line</p>\n" +
                                             "<p>end</p>";
@@ -30,6 +33,7 @@ namespace DiffMatchPatchTests
         private const string actualHtml = "<p>start</p>\n" +
                                           "<p>new line</p>\n" +
                                           "<p>line with some modified content</p>\n" +
+                                          "<p>line with some more content\tthat has a tab added</p>\n" +
                                           "<p>unchanged content</p>\n" +
                                           "<p>end</p>";
 
@@ -41,8 +45,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToText());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToText()));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -53,8 +57,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToReadableText());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText()));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -65,8 +69,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToHtml());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToHtml(), "html"));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -77,8 +81,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToHtmlDocument());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToHtmlDocument(), "html"));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -87,7 +91,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expected, actual);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToText());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToText()));
         }
 
         [Test]
@@ -96,7 +100,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expected, actual);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToReadableText());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToReadableText()));
         }
 
         [Test]
@@ -105,7 +109,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expected, actual);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToHtml());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToHtml(), "html"));
         }
 
         [Test]
@@ -114,7 +118,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expected, actual);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToHtmlDocument());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToHtmlDocument(), "html"));
         }
 
         [Test]
@@ -125,8 +129,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToText());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToText()));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -137,8 +141,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToReadableText());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText()));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -149,8 +153,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToReadableText(true));
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToReadableText(true)));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -161,8 +165,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToHtml());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToHtml(), "html"));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -173,8 +177,8 @@ namespace DiffMatchPatchTests
 
             var patches = Patch.FromDiffs(diffs);
 
-            Approvals.Verify(patches.ToHtmlDocument());
-            Assert.AreEqual(3, patches.Count);
+            Approvals.Verify(new ApprovalTextWriter(patches.ToHtmlDocument(), "html"));
+            Assert.AreEqual(4, patches.Count);
         }
 
         [Test]
@@ -183,7 +187,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expectedHtml, actualHtml);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToText());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToText()));
         }
 
         [Test]
@@ -192,7 +196,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expectedHtml, actualHtml);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToReadableText());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToReadableText()));
         }
 
         [Test]
@@ -201,7 +205,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expectedHtml, actualHtml);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToReadableText(true));
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToReadableText(true)));
         }
 
         [Test]
@@ -210,7 +214,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expectedHtml, actualHtml);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToHtml());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToHtml(), "html"));
         }
 
         [Test]
@@ -219,7 +223,7 @@ namespace DiffMatchPatchTests
             var diffs = Diff.Compute(expectedHtml, actualHtml);
             diffs.Cleanup();
 
-            Approvals.Verify(diffs.ToHtmlDocument());
+            Approvals.Verify(new ApprovalTextWriter(diffs.ToHtmlDocument(), "html"));
         }
     }
 }

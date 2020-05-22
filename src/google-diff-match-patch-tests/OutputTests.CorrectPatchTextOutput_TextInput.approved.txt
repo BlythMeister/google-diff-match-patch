@@ -6,12 +6,12 @@ Insert character coordinates: 1,23
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
 start¶
-line wit
+line·wit
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
 start¶
-new line¶
-line wit
+new·line¶
+line·wit
 _____________________________________ <<
 
 >> _____________________________________
@@ -21,23 +21,38 @@ Insert character coordinates: 23,25
 NOTE: Patch coordinates are based on patch 1 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
-th some content¶
+th·some·content¶
 
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-th some modified content¶
+th·some·modified·content¶
 
 _____________________________________ <<
 
 >> _____________________________________
 Patch number: 3
-Delete character coordinates: 62,20
-Insert character coordinates: 62,7
+Delete character coordinates: 67,16
+Insert character coordinates: 67,37
 NOTE: Patch coordinates are based on patch 2 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
+·content¶
+unchang
+~~~~~~~~~~~~~~~~~~~~
+>> +++
+·content»that·has·a·tab·added¶
+unchang
+_____________________________________ <<
+
+>> _____________________________________
+Patch number: 4
+Delete character coordinates: 111,20
+Insert character coordinates: 111,7
+NOTE: Patch coordinates are based on patch 3 being applied
+~~~~~~~~~~~~~~~~~~~~
+>> ---
 ent¶
-removed line¶
+removed·line¶
 end
 ~~~~~~~~~~~~~~~~~~~~
 >> +++

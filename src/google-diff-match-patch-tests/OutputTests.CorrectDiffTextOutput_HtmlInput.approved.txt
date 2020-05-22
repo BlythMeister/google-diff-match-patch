@@ -1,13 +1,15 @@
 ﻿>> ---
 <p>start</p>¶
-<p>line with some content</p>¶
-<p>unchanged content</p>¶
-<p>removed line</p>¶
+<p>line·with·some·content</p>¶
+<p>line·with·some·more·content</p>¶
+<p>unchanged·content</p>¶
+<p>removed·line</p>¶
 <p>end</p>
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
 <p>start</p>¶
-<p>new line</p>¶
-<p>line with some modified content</p>¶
-<p>unchanged content</p>¶
+<p>new·line</p>¶
+<p>line·with·some·modified·content</p>¶
+<p>line·with·some·more·content»that·has·a·tab·added</p>¶
+<p>unchanged·content</p>¶
 <p>end</p>

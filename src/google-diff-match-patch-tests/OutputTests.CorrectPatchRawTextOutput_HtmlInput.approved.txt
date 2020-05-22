@@ -1,12 +1,16 @@
-﻿@@ -6,16 +6,32 @@
- art%3c/p%3e%0a
+﻿@@ -2,24 +2,40 @@
+ p%3estart%3c/p%3e%0a
 +%3cp%3enew line%3c/p%3e%0a
- %3cp%3eline 
+ %3cp%3eline with
 @@ -40,16 +40,25 @@
  th some 
 +modified 
  content%3c
-@@ -90,28 +90,8 @@
+@@ -83,32 +83,53 @@
+ ome more content
++%09that has a tab added
+ %3c/p%3e%0a%3cp%3eunchange
+@@ -146,28 +146,8 @@
  /p%3e%0a
 -%3cp%3eremoved line%3c/p%3e%0a
  %3cp%3ee

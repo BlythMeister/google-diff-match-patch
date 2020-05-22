@@ -19,7 +19,7 @@ namespace DiffMatchPatch
         // One of: INSERT, DELETE or EQUAL.
         public string Text { get; }
 
-        public string FormattedText => Text.Replace("\n", "\u00b6\n");
+        public string FormattedText => Text.Replace("\r\n", "\n").Replace("\n", "\u00b6\n").Replace("\t", "\u00BB").Replace(" ", "\u00B7");
 
         // The text associated with this diff operation.
 

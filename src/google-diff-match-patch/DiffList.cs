@@ -131,6 +131,7 @@ namespace DiffMatchPatch
             textBuilder.AppendLine("<!-- START OF DIFFS -->");
             textBuilder.AppendLine("<div class=\"diffContainer\">");
 
+            var diffText = new StringBuilder();
             foreach (var aDiff in diffs)
             {
                 var text = HttpUtility.HtmlEncode(aDiff.FormattedText).Replace("\n", "<br />\n");
@@ -143,21 +144,22 @@ namespace DiffMatchPatch
                 switch (aDiff.Operation)
                 {
                     case Operation.Insert:
-                        textBuilder.AppendLine($"<ins class=\"diffInsert\">\n{text}\n</ins>");
+                        diffText.Append($"<ins class=\"diffInsert\">{text}</ins>");
                         break;
 
                     case Operation.Delete:
-                        textBuilder.AppendLine($"<del class=\"diffDelete\">\n{text}\n</del>");
+                        diffText.Append($"<del class=\"diffDelete\">{text}</del>");
                         break;
 
                     case Operation.Equal:
-                        textBuilder.AppendLine($"<span class=\"diffUnchanged\">\n{text}\n</span>");
+                        diffText.Append($"<span class=\"diffUnchanged\">{text}</span>");
                         break;
 
                     default: throw new ArgumentException($"Invalid Operation: {aDiff.Operation}");
                 }
             }
 
+            textBuilder.AppendLine(diffText.ToStringWithoutTrailingLine());
             textBuilder.AppendLine("</div>");
             textBuilder.AppendLine("<!-- END OF DIFFS -->");
             return textBuilder.ToStringWithoutTrailingLine();

@@ -1,17 +1,17 @@
 ﻿
 >> _____________________________________
 Patch number: 1
-Delete character coordinates: 6,16
-Insert character coordinates: 6,32
+Delete character coordinates: 2,24
+Insert character coordinates: 2,40
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
-art</p>¶
-<p>line 
+p>start</p>¶
+<p>line·with
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-art</p>¶
-<p>new line</p>¶
-<p>line 
+p>start</p>¶
+<p>new·line</p>¶
+<p>line·with
 _____________________________________ <<
 
 >> _____________________________________
@@ -21,21 +21,36 @@ Insert character coordinates: 40,25
 NOTE: Patch coordinates are based on patch 1 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
-th some content<
+th·some·content<
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
-th some modified content<
+th·some·modified·content<
 _____________________________________ <<
 
 >> _____________________________________
 Patch number: 3
-Delete character coordinates: 90,28
-Insert character coordinates: 90,8
+Delete character coordinates: 83,32
+Insert character coordinates: 83,53
 NOTE: Patch coordinates are based on patch 2 being applied
 ~~~~~~~~~~~~~~~~~~~~
 >> ---
+ome·more·content</p>¶
+<p>unchange
+~~~~~~~~~~~~~~~~~~~~
+>> +++
+ome·more·content»that·has·a·tab·added</p>¶
+<p>unchange
+_____________________________________ <<
+
+>> _____________________________________
+Patch number: 4
+Delete character coordinates: 146,28
+Insert character coordinates: 146,8
+NOTE: Patch coordinates are based on patch 3 being applied
+~~~~~~~~~~~~~~~~~~~~
+>> ---
 /p>¶
-<p>removed line</p>¶
+<p>removed·line</p>¶
 <p>e
 ~~~~~~~~~~~~~~~~~~~~
 >> +++
