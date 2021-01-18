@@ -18,6 +18,8 @@
   <PropertyGroup>
     <ApplicationIcon />
     <OutputType>Exe</OutputType>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>google-diff-match-patch-tests.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="ApprovalTests" Version="5.2.3" />
