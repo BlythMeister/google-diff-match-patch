@@ -38,11 +38,11 @@ This would give output of:
 
 ```text
 Diff(Equal,"start¶")
-Diff(Insert,"new line¶")
-Diff(Equal,"line with some ")
-Diff(Insert,"modified ")
-Diff(Equal,"content¶unchanged content")
-Diff(Delete,"¶removed line")
+Diff(Insert,"new·line¶")
+Diff(Equal,"line·with·some·")
+Diff(Insert,"modified·")
+Diff(Equal,"content¶unchanged·content")
+Diff(Delete,"¶removed·line")
 Diff(Equal,"¶end")
 ```
 
@@ -117,12 +117,12 @@ These can be displayed on screen or saved to a file within your own code
 
 Example output can be seen in the ApprovalTest output: 
 
-* [diffs.ToHtml()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffHtmlOutput_TextInput.approved.txt)
-* [diffs.ToHtmlDocument()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffHtmlDocOutput_TextInput.approved.txt)
+* [diffs.ToHtml()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffHtmlOutput_TextInput.approved.html)
+* [diffs.ToHtmlDocument()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffHtmlDocOutput_TextInput.approved.html)
 * [diffs.ToReadableText()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffTextOutput_TextInput.approved.txt)
 * [diffs.ToText()](src/google-diff-match-patch-tests/OutputTests.CorrectDiffRawTextOutput_TextInput.approved.txt)
-* [patches.ToHtml()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchHtmlOutput_TextInput.approved.txt)
-* [patches.ToHtmlDocument()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchHtmlDocOutput_TextInput.approved.txt)
+* [patches.ToHtml()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchHtmlOutput_TextInput.approved.html)
+* [patches.ToHtmlDocument()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchHtmlDocOutput_TextInput.approved.html)
 * [patches.ToReadableText()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchTextOutput_TextInput.approved.txt)
 * [patches.ToText()](src/google-diff-match-patch-tests/OutputTests.CorrectPatchRawTextOutput_TextInput.approved.txt)
 
