@@ -18,7 +18,7 @@
     <RepositoryUrl>https://github.com/BlythMeister/google-diff-match-patch</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/BlythMeister/google-diff-match-patch</PackageProjectUrl>
+    <PackageProjectUrl>https://diff-match-patch.blyth.me.uk</PackageProjectUrl>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>google-diff-match-patch.snk</AssemblyOriginatorKeyFile>
