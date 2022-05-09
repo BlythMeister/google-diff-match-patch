@@ -197,7 +197,7 @@ namespace DiffMatchPatchTests
                 Diff.Compute(a, b, false, cts.Token, false);
                 var elapsed = stopWatch.Elapsed;
                 // assert that elapsed time is between timeout and 2*timeout (be forgiving)
-                Assert.IsTrue(timeout <= elapsed.Add(TimeSpan.FromMilliseconds(1)), string.Format("Expected timeout < elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
+                Assert.IsTrue(timeout <= elapsed), string.Format("Expected timeout < elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
                 Assert.IsTrue(TimeSpan.FromTicks(2 * timeout.Ticks) > elapsed);
             }
         }
