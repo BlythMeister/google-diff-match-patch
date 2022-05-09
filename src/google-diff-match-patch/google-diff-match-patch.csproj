@@ -9,6 +9,7 @@
     <Copyright>Copyright © 2020</Copyright>
     <PackageId>google-diff-match-patch</PackageId>
     <Description>Evolution of the C# port of the google diff-match-patch implementation. - https://github.com/google/diff-match-patch</Description>
+	<PackageIcon>logo.png</PackageIcon>
     <Authors>Chris Blyth,Google</Authors>
     <Version>0.0.0.0</Version>
     <AssemblyVersion>0.0.0.0</AssemblyVersion>
