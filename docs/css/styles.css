@@ -198,7 +198,6 @@ a.far:hover {
     background: #000000;
     color: #FFFFFF;
 }
-}
 
 @media (max-width:990px) {
     .gist {
