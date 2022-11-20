@@ -236,7 +236,10 @@ namespace DiffMatchPatch
                 else
                 {
                     var bytes = Encoding.UTF8.GetBytes(new[] { c });
-                    sb.Append(string.Join("", bytes.Select(b => $"%{b:x2}")));
+                    foreach (byte b in bytes)
+                    {
+                        sb.Append($"%{b:x2}");
+                    }
                 }
             }
             return sb.ToString();
