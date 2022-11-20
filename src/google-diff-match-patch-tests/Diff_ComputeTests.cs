@@ -186,7 +186,7 @@ namespace DiffMatchPatchTests
             string b =
                 RepeatString("I am the very model of a modern major general,\nI've information vegetable, animal, and mineral,\nI know the kings of England, and I quote the fights historical,\nFrom Marathon to Waterloo, in order categorical.\n", repeatCount);
 
-            var timeout = TimeSpan.FromMilliseconds(100);
+            var timeout = TimeSpan.FromMilliseconds(50);
 
             using (var cts = new CancellationTokenSource(timeout))
             {
