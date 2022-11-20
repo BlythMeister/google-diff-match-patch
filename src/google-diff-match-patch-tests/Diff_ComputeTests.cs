@@ -180,7 +180,7 @@ namespace DiffMatchPatchTests
         public void Timeout()
         {
             // repeating the strings so that the operation times out
-            const int repeatCount = 50;
+            const int repeatCount = 100;
             string a =
                 RepeatString("`Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe:\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n", repeatCount);
             string b =
