@@ -221,15 +221,21 @@ namespace DiffMatchPatch
         /// </summary>
         internal static string UrlEncoded(this string str)
         {
-            // see Not Escaped at
+            // The characters which are not escaped by javascript encodeURI are listed at
             // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+            // in addition to the above spec, the space character is unescaped
+            // note the equivalent inbuilt methods up to and including .NET 7, all behave like javascript encodeURIComponent
+            // which is NOT the documented behaviour https://github.com/google/diff-match-patch/wiki/Unidiff#user-content-2-encoded-characters
+            // hence rolling our own
             const string unescaped = " ;,/?:@&=+$-_.!~*'()#";
             var sb = new StringBuilder(str.Length);
             foreach (char c in str)
             {
-                // once migrating to .NET 7 use char.IsAsciiLetterOrDigit(c) to meet the documented requirements
-                // although the need to url encode non-ascii letters is questionable in this setting
+#if NET7_0_OR_GREATER
+                if (char.IsAsciiLetterOrDigit(c) || unescaped.Contains(c))
+#else
                 if ((char.IsLetterOrDigit(c) && c <= 'z') || unescaped.Contains(c))
+#endif
                 {
                     sb.Append(c);
                 }
