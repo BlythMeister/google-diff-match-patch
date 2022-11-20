@@ -19,5 +19,9 @@ namespace DiffMatchPatch
 
             return stringOutput;
         }
+        public static StringBuilder AppendWithNewline(this StringBuilder sb, string append) 
+        { 
+            return sb.Append(append).Append('\n');
+        }
     }
 }

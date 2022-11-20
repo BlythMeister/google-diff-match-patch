@@ -74,15 +74,15 @@ namespace DiffMatchPatch
         public override string ToString()
         {
             var text = new StringBuilder();
-            text.AppendLine($"@@ {Coordinates} @@");
+            text.AppendWithNewline($"@@ {Coordinates} @@");
 
             // Escape the body of the patch with %xx notation.
             foreach (var aDiff in Diffs)
             {
-                text.AppendLine($"{(char)aDiff.Operation}{aDiff.Text.UrlEncoded()}");
+                text.AppendWithNewline($"{(char)aDiff.Operation}{aDiff.Text.UrlEncoded()}");
             }
 
-            return text.ToString().Replace("\r\n", "\n");
+            return text.ToString();
         }
 
         internal Patch Copy()
