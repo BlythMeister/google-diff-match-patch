@@ -19,7 +19,7 @@ namespace DiffMatchPatch
 
             return stringOutput;
         }
-        public static StringBuilder AppendNewline(this StringBuilder sb, string append) 
+        public static StringBuilder AppendWithNewline(this StringBuilder sb, string append) 
         { 
             return sb.Append(append).Append('\n');
         }

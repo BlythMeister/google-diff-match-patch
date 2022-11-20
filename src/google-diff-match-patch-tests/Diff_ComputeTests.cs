@@ -179,16 +179,13 @@ namespace DiffMatchPatchTests
         [Test]
         public void Timeout()
         {
-            var a =
-                "`Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe:\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n";
-            var b =
-                "I am the very model of a modern major general,\nI've information vegetable, animal, and mineral,\nI know the kings of England, and I quote the fights historical,\nFrom Marathon to Waterloo, in order categorical.\n";
-            // Increase the text lengths by 1024 times to ensure a timeout.
-            for (var x = 0; x < 10; x++)
-            {
-                a = a + a;
-                b = b + b;
-            }
+            // repeating the strings so that the operation times out
+            const int repeatCount = 50;
+            string a =
+                RepeatString("`Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe:\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n", repeatCount);
+            string b =
+                RepeatString("I am the very model of a modern major general,\nI've information vegetable, animal, and mineral,\nI know the kings of England, and I quote the fights historical,\nFrom Marathon to Waterloo, in order categorical.\n", repeatCount);
+
             var timeout = TimeSpan.FromMilliseconds(100);
 
             using (var cts = new CancellationTokenSource(timeout))
@@ -196,9 +193,10 @@ namespace DiffMatchPatchTests
                 var stopWatch = Stopwatch.StartNew();
                 Diff.Compute(a, b, false, cts.Token, false);
                 var elapsed = stopWatch.Elapsed;
+                Assert.IsTrue(cts.IsCancellationRequested, "Cancellation was not requested. This is likely a problem with the test not taking enought time to complete. Try increasing the size of the test string (set a larger repeatCount)");
                 // assert that elapsed time is between timeout and 2*timeout (be forgiving)
-                Assert.IsTrue(timeout <= elapsed, string.Format("Expected timeout < elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
-                Assert.IsTrue(TimeSpan.FromTicks(2 * timeout.Ticks) > elapsed);
+                Assert.LessOrEqual(timeout, elapsed, string.Format("Expected timeout < elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
+                Assert.Greater(TimeSpan.FromTicks(2 * timeout.Ticks), elapsed);
             }
         }
 
@@ -252,6 +250,13 @@ namespace DiffMatchPatchTests
                 }
             }
             return Tuple.Create(text.Item1.ToString(), text.Item2.ToString());
+        }
+
+        private static string RepeatString(string str, int count)
+        {
+            var sb = new StringBuilder(str.Length * count);
+            sb.Insert(0, str, count);
+            return sb.ToString();
         }
     }
 }
