@@ -1,6 +1,6 @@
 using System;
+using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace DiffMatchPatch
 {
@@ -215,37 +215,31 @@ namespace DiffMatchPatch
             return text1.Length > text2.Length ? hm : hm.Reverse();
         }
 
-        private static Regex HEXCODE = new Regex("%[0-9A-F][0-9A-F]");
-
         /// <summary>
         ///  Encodes a string with URI-style % escaping.
         /// Compatible with JavaScript's encodeURI function.
         /// </summary>
         internal static string UrlEncoded(this string str)
         {
-            // TODO verify if this is the right way (probably should use HttpUtility here)
-
-            var MAX_LENGTH = 0xFFEF;
-            // C# throws a System.UriFormatException if string is too long.
-            // Split the string into 64kb chunks.
-            var sb = new StringBuilder();
-            var index = 0;
-            while (index + MAX_LENGTH < str.Length)
+            // see Not Escaped at
+            // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+            const string unescaped = " ;,/?:@&=+$-_.!~*'()#";
+            var sb = new StringBuilder(str.Length);
+            foreach (char c in str)
             {
-                sb.Append(Uri.EscapeDataString(str.Substring(index, MAX_LENGTH)));
-                index += MAX_LENGTH;
+                // once migrating to .NET 7 use char.IsAsciiLetterOrDigit(c) to meet the documented requirements
+                // although the need to url encode non-ascii letters is questionable in this setting
+                if ((char.IsLetterOrDigit(c) && c <= 'z') || unescaped.Contains(c))
+                {
+                    sb.Append(c);
+                }
+                else
+                {
+                    var bytes = Encoding.UTF8.GetBytes(new[] { c });
+                    sb.Append(string.Join("", bytes.Select(b => $"%{b:x2}")));
+                }
             }
-            sb.Append(Uri.EscapeDataString(str.Substring(index)));
-            // C# is overzealous in the replacements.  Walk back on a few.
-            sb = sb.Replace('+', ' ').Replace("%20", " ").Replace("%21", "!")
-                .Replace("%2A", "*").Replace("%27", "'").Replace("%28", "(")
-                .Replace("%29", ")").Replace("%3B", ";").Replace("%2F", "/")
-                .Replace("%3F", "?").Replace("%3A", ":").Replace("%40", "@")
-                .Replace("%26", "&").Replace("%3D", "=").Replace("%2B", "+")
-                .Replace("%24", "$").Replace("%2C", ",").Replace("%23", "#");
-            // C# uses uppercase hex codes, JavaScript uses lowercase.
-
-            return HEXCODE.Replace(sb.ToString(), s => s.Value.ToLower());
+            return sb.ToString();
         }
 
         internal static string UrlDecoded(this string str)
