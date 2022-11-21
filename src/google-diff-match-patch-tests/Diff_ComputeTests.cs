@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using static DiffMatchPatch.Diff;
@@ -180,23 +181,25 @@ namespace DiffMatchPatchTests
         public void Timeout()
         {
             // repeating the strings so that the operation times out
-            const int repeatCount = 100;
+            const int repeatCount = 10000;
             string a =
-                RepeatString("`Twas brillig, and the slithy toves\nDid gyre and gimble in the wabe:\nAll mimsy were the borogoves,\nAnd the mome raths outgrabe.\n", repeatCount);
-            string b =
-                RepeatString("I am the very model of a modern major general,\nI've information vegetable, animal, and mineral,\nI know the kings of England, and I quote the fights historical,\nFrom Marathon to Waterloo, in order categorical.\n", repeatCount);
+                string.Join('\n', Enumerable.Range(0, repeatCount).Select(x => $"`{x}-Twas brillig, and the slithy toves\n{x}-Did gyre and gimble in the wabe:\n{x}-All mimsy were the borogoves,\n{x}-And the mome raths outgrabe.\n"));
 
-            var timeout = TimeSpan.FromMilliseconds(50);
+            string b =
+                string.Join('\n', Enumerable.Range(0, repeatCount).Select(x => $"`{x}-I am the very model of a modern major general,\n{x}-I've information vegetable, animal, and mineral,\n{x}-I know the kings of England, and I quote the fights historical,\n{x}-From Marathon to Waterloo, in order categorical.\n"));
+
+            var timeout = TimeSpan.FromMilliseconds(150);
 
             using (var cts = new CancellationTokenSource(timeout))
             {
                 var stopWatch = Stopwatch.StartNew();
                 Diff.Compute(a, b, false, cts.Token, false);
                 var elapsed = stopWatch.Elapsed;
-                Assert.IsTrue(cts.IsCancellationRequested, "Cancellation was not requested. This is likely a problem with the test not taking enought time to complete. Try increasing the size of the test string (set a larger repeatCount)");
+                Assert.IsTrue(cts.IsCancellationRequested, "Cancellation was not requested. This is likely a problem with the test not taking enough time to complete. Try increasing the size of the test string (set a larger repeatCount)");
                 // assert that elapsed time is between timeout and 2*timeout (be forgiving)
-                Assert.LessOrEqual(timeout, elapsed, string.Format("Expected timeout < elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
-                Assert.Greater(TimeSpan.FromTicks(2 * timeout.Ticks), elapsed);
+                var timeoutMax = TimeSpan.FromTicks(3 * timeout.Ticks);
+                Assert.Greater(elapsed, timeout, string.Format("Expected elapsed > timeout. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
+                Assert.Greater(timeoutMax, elapsed, string.Format("Expected timeout * 3 > elapsed. Elapsed = {0}, Timeout = {1}.", elapsed, timeout));
             }
         }
 
@@ -250,13 +253,6 @@ namespace DiffMatchPatchTests
                 }
             }
             return Tuple.Create(text.Item1.ToString(), text.Item2.ToString());
-        }
-
-        private static string RepeatString(string str, int count)
-        {
-            var sb = new StringBuilder(str.Length * count);
-            sb.Insert(0, str, count);
-            return sb.ToString();
         }
     }
 }

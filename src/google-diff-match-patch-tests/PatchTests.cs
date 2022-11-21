@@ -104,7 +104,7 @@ namespace DiffMatchPatchTests
         }
 
         [Test]
-        public void AddContext_NotEnoughTrailingContext()
+        public void AddContext_NotenoughrailingContext()
         {
             var p = PatchList.Parse("@@ -21,4 +21,10 @@\n-jump\n+somersault\n")[0];
             p.AddContext("The quick brown fox jumps.");
