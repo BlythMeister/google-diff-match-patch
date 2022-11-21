@@ -183,10 +183,10 @@ namespace DiffMatchPatchTests
             // repeating the strings so that the operation times out
             const int repeatCount = 10000;
             string a =
-                string.Join('\n', Enumerable.Range(0, repeatCount).Select(x => $"`{x}-Twas brillig, and the slithy toves\n{x}-Did gyre and gimble in the wabe:\n{x}-All mimsy were the borogoves,\n{x}-And the mome raths outgrabe.\n"));
+                string.Join("\n", Enumerable.Range(0, repeatCount).Select(x => $"`{x}-Twas brillig, and the slithy toves\n{x}-Did gyre and gimble in the wabe:\n{x}-All mimsy were the borogoves,\n{x}-And the mome raths outgrabe.\n"));
 
             string b =
-                string.Join('\n', Enumerable.Range(0, repeatCount).Select(x => $"`{x}-I am the very model of a modern major general,\n{x}-I've information vegetable, animal, and mineral,\n{x}-I know the kings of England, and I quote the fights historical,\n{x}-From Marathon to Waterloo, in order categorical.\n"));
+                string.Join("\n", Enumerable.Range(0, repeatCount).Select(x => $"`{x}-I am the very model of a modern major general,\n{x}-I've information vegetable, animal, and mineral,\n{x}-I know the kings of England, and I quote the fights historical,\n{x}-From Marathon to Waterloo, in order categorical.\n"));
 
             var timeout = TimeSpan.FromMilliseconds(150);
 

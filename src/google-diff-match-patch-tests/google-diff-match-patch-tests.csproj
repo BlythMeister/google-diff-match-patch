@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>DiffMatchPatchTests</RootNamespace>
-    <TargetFrameworks>netcoreapp3.1;net6;net7</TargetFrameworks>
+    <TargetFrameworks>net48;netcoreapp3.1;net6;net7</TargetFrameworks>
     <AssemblyName>google-diff-match-patch-tests</AssemblyName>
     <Product>google-diff-match-patch-tests</Product>
     <Copyright>Copyright © 2020</Copyright>
@@ -17,7 +17,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon />
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>google-diff-match-patch-tests.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
