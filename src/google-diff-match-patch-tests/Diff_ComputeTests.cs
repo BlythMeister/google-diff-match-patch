@@ -188,7 +188,7 @@ namespace DiffMatchPatchTests
             string b =
                 string.Join("\n", Enumerable.Range(0, repeatCount).Select(x => $"`{x}-I am the very model of a modern major general,\n{x}-I've information vegetable, animal, and mineral,\n{x}-I know the kings of England, and I quote the fights historical,\n{x}-From Marathon to Waterloo, in order categorical.\n"));
 
-            var timeout = TimeSpan.FromMilliseconds(100);
+            var timeout = TimeSpan.FromMilliseconds(200);
 
             using (var cts = new CancellationTokenSource(timeout))
             {
